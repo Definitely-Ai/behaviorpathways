@@ -8,11 +8,6 @@ export async function sendEmail(subject: string, text: string) {
     console.warn('Contact email not configured; skipping send')
     return
   }
-=======
-
-export async function sendEmail(subject: string, text: string) {
-  const to = process.env.CONTACT_TO_EMAIL
-  if (!to) throw new Error('CONTACT_TO_EMAIL not set')
 
   if (process.env.RESEND_API_KEY) {
     const resend = new Resend(process.env.RESEND_API_KEY)
