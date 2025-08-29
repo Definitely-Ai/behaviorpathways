@@ -8,7 +8,9 @@ export default function Page() {
     <>
       <PageHero title={contact.heading} subtitle={contact.copy} />
       <Section>
-        <ContactForm />
+        <div className="max-w-xl mx-auto rounded-2xl bg-bp-surface/80 shadow-3d p-8 animate-fade-in">
+          <ContactForm />
+        </div>
       </Section>
     </>
   )
