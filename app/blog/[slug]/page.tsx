@@ -9,14 +9,7 @@ export async function generateStaticParams() {
 }
 
 
-import type { Metadata } from 'next'
-import type { FC } from 'react'
-
-type PageProps = {
-  params: { slug: string }
-}
-
-const Page: FC<PageProps> = ({ params }) => {
+export default function Page({ params }: { params: { slug: string } }) {
   const post = posts.find((p) => p.slug === params.slug)
   if (!post) notFound()
   const Content = post.component
@@ -29,5 +22,3 @@ const Page: FC<PageProps> = ({ params }) => {
     </>
   )
 }
-
-export default Page
