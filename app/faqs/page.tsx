@@ -8,7 +8,9 @@ export default function Page() {
     <>
       <PageHero title="FAQs" />
       <Section containerClass="max-w-3xl">
-        <FAQAccordion items={faqs} />
+        <div className="rounded-2xl bg-bp-surface/70 shadow-3d p-4 animate-fade-in">
+          <FAQAccordion items={faqs} />
+        </div>
       </Section>
     </>
   )
