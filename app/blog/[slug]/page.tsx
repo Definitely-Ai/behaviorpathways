@@ -3,11 +3,20 @@ import { posts } from '@/content/blog'
 import { PageHero } from '@/components/page-hero'
 import { Section } from '@/components/section'
 
-export function generateStaticParams() {
+
+export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }))
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
+
+import type { Metadata } from 'next'
+import type { FC } from 'react'
+
+type PageProps = {
+  params: { slug: string }
+}
+
+const Page: FC<PageProps> = ({ params }) => {
   const post = posts.find((p) => p.slug === params.slug)
   if (!post) notFound()
   const Content = post.component
@@ -20,3 +29,5 @@ export default function Page({ params }: { params: { slug: string } }) {
     </>
   )
 }
+
+export default Page
