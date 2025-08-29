@@ -1,6 +1,6 @@
 # Behavior Pathways
 
-Marketing website for a small ABA therapy provider built with Next.js 14, TypeScript, and Tailwind CSS. Deploys easily to Vercel.
+One-page marketing website for a small ABA therapy provider, built with Next.js 14, TypeScript, and Tailwind CSS. Deploys easily to Vercel. All blog and multi-page features have been removed for simplicity.
 
 ## 🚀 Getting Started
 

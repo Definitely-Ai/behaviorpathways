@@ -1,5 +1,4 @@
 import type { MetadataRoute } from 'next'
-import { posts } from '@/content/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base =
@@ -15,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'parent-training',
     'faqs',
     'testimonials',
-    'blog',
+
     'contact',
     'privacy',
     'terms',
@@ -25,9 +24,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/${p}`,
     lastModified: new Date(),
   }))
-  const blogPages = posts.map((p) => ({
-    url: `${base}/blog/${p.slug}`,
-    lastModified: new Date(),
-  }))
-  return [...pages, ...blogPages]
+  return pages
 }
