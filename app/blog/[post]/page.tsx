@@ -7,9 +7,7 @@ export async function generateStaticParams() {
   return posts.map((p) => ({ post: p.slug }))
 }
 
-export const dynamic = 'force-static'
-
-export default async function Page({ params }: { params: { post: string } }) {
+export default function Page({ params }: { params: { post: string } }) {
   const post = posts.find((p) => p.slug === params.post)
   if (!post) notFound()
   const Content = post.component
