@@ -2,6 +2,12 @@ import type { MetadataRoute } from 'next'
 import { posts } from '@/content/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000')
+=======
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
   const routes = [
     '',

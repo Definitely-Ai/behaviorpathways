@@ -1,5 +1,14 @@
 import nodemailer from 'nodemailer'
 import { Resend } from 'resend'
+import { site } from '@/content/site'
+
+export async function sendEmail(subject: string, text: string) {
+  const to = process.env.CONTACT_TO_EMAIL || site.contact.email
+  if (!to) {
+    console.warn('Contact email not configured; skipping send')
+    return
+  }
+=======
 
 export async function sendEmail(subject: string, text: string) {
   const to = process.env.CONTACT_TO_EMAIL

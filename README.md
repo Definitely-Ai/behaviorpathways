@@ -20,6 +20,11 @@ npm run dev
 
 ## 🔐 Environment Variables
 
+Copy `.env.example` to `.env` and fill in (all optional):
+
+- `NEXT_PUBLIC_SITE_URL` – base URL for metadata. If omitted, Vercel's domain or `localhost` is used.
+- `CONTACT_TO_EMAIL` – email where form submissions are sent. Defaults to the address in `content/site.ts`.
+=======
 Copy `.env.example` to `.env` and fill in:
 
 - `NEXT_PUBLIC_SITE_URL` – base URL for metadata
