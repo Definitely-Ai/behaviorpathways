@@ -7,10 +7,18 @@ export default function Page() {
   return (
     <>
       <PageHero title="Testimonials" subtitle="Real stories from families" />
-      <Section containerClass="grid max-w-3xl gap-6">
-        {testimonials.map((t) => (
-          <TestimonialCard key={t.author} quote={t.quote} author={t.author} />
-        ))}
+      <Section containerClass="max-w-3xl">
+        <div className="grid gap-8 md:grid-cols-2">
+          {testimonials.map((t, i) => (
+            <TestimonialCard
+              key={t.author}
+              quote={t.quote}
+              author={t.author}
+              className="animate-fade-in motion-safe:transition-transform motion-safe:hover:scale-105"
+              style={{ animationDelay: `${i * 120}ms` }}
+            />
+          ))}
+        </div>
       </Section>
     </>
   )
