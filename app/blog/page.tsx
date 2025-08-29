@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <>
       <PageHero title="Blog" />
-      <Section className="mx-auto max-w-3xl space-y-8">
+      <Section containerClass="max-w-3xl space-y-8">
         {posts.map((p) => (
           <article key={p.slug}>
             <h2 className="font-heading text-2xl">

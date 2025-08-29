@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <>
       <PageHero title="Testimonials" subtitle="Real stories from families" />
-      <Section className="mx-auto grid max-w-3xl gap-6">
+      <Section containerClass="grid max-w-3xl gap-6">
         {testimonials.map((t) => (
           <TestimonialCard key={t.author} quote={t.quote} author={t.author} />
         ))}

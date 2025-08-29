@@ -3,8 +3,8 @@ import { site } from '@/content/site'
 
 export function Footer() {
   return (
-    <footer className="bg-bp-surface text-sm text-white">
-      <div className="mx-auto grid max-w-5xl gap-6 p-6 md:grid-cols-3">
+    <footer className="bg-bp-surface/80 text-sm text-white backdrop-blur">
+      <div className="mx-auto grid max-w-5xl gap-8 px-4 py-10 md:grid-cols-3">
         <div>
           <h2 className="mb-2 font-heading">Contact</h2>
           <p>
@@ -36,7 +36,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="pb-4 text-center">
+      <div className="border-t border-bp-muted py-4 text-center">
         © {new Date().getFullYear()} {site.name}
       </div>
     </footer>

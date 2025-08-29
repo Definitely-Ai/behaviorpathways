@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <>
       <PageHero title="Terms of Service" />
-      <Section className="mx-auto max-w-3xl space-y-4">
+      <Section containerClass="max-w-3xl space-y-4">
         <p>
           This website provides general information about our services. Use of
           the site does not create a provider-client relationship.

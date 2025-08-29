@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <>
       <PageHero title="Privacy Policy" />
-      <Section className="mx-auto max-w-3xl space-y-4">
+      <Section containerClass="max-w-3xl space-y-4">
         <p>
           We respect your privacy and collect only the information necessary to
           respond to your inquiries.

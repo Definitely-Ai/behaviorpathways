@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <PageHero title={whyUs.heading} />
-      <Section className="mx-auto max-w-3xl space-y-4">
+      <Section containerClass="max-w-3xl space-y-4">
         {whyUs.copy.map((p) => (
           <p key={p}>{p}</p>
         ))}

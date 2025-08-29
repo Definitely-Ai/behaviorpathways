@@ -12,5 +12,11 @@ export default withMDX({
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {
     unoptimized: false,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
 })

@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <PageHero title={approach.heading} />
-      <Section className="mx-auto max-w-3xl space-y-4">
+      <Section containerClass="max-w-3xl space-y-4">
         <p>{approach.copy}</p>
         <ul className="list-disc space-y-2 pl-6">
           {approach.bullets.map((b) => (

@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
 import { site } from '@/content/site'
 import { ThemeToggle } from './theme-toggle'
 
@@ -15,13 +17,15 @@ const nav = [
 ]
 
 export function Header() {
+  const [open, setOpen] = useState(false)
+
   return (
-    <header className="sticky top-0 z-50 bg-bp-surface text-white">
+    <header className="sticky top-0 z-50 bg-bp-surface/80 text-white backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between p-4">
         <Link href="/" className="font-heading text-xl">
           {site.name}
         </Link>
-        <nav className="hidden gap-4 md:flex">
+        <nav className="hidden gap-6 md:flex">
           {nav.map((n) => (
             <Link key={n.href} href={n.href} className="hover:underline">
               {n.label}
@@ -31,13 +35,46 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
-            className="rounded bg-bp-primary px-3 py-1 text-black"
+            className="hidden rounded bg-bp-primary px-3 py-1 text-black sm:block"
           >
             Book a free consult
           </Link>
           <ThemeToggle />
+          <button
+            aria-label="Toggle menu"
+            className="md:hidden"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X /> : <Menu />}
+          </button>
         </div>
       </div>
+      {open && (
+        <nav className="border-t border-bp-muted bg-bp-surface md:hidden">
+          <ul className="flex flex-col items-center gap-4 py-4">
+            {nav.map((n) => (
+              <li key={n.href}>
+                <Link
+                  href={n.href}
+                  onClick={() => setOpen(false)}
+                  className="block px-4 py-2 hover:underline"
+                >
+                  {n.label}
+                </Link>
+              </li>
+            ))}
+            <li className="sm:hidden">
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="rounded bg-bp-primary px-3 py-1 text-black"
+              >
+                Book a free consult
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   )
 }

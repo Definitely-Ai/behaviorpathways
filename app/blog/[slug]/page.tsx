@@ -14,7 +14,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <PageHero title={post.title} />
-      <Section className="mx-auto max-w-3xl space-y-4">
+      <Section containerClass="max-w-3xl space-y-4">
         <Content />
       </Section>
     </>

@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <>
       <PageHero title="Accessibility Statement" />
-      <Section className="mx-auto max-w-3xl space-y-4">
+      <Section containerClass="max-w-3xl space-y-4">
         <p>
           We strive to make this website accessible to everyone. If you
           experience barriers please contact us so we can help.

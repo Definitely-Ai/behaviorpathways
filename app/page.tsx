@@ -42,11 +42,11 @@ export default function Page() {
         <h2 className="mb-4 font-heading text-3xl">{home.mission.heading}</h2>
         <p>{home.mission.copy}</p>
       </Section>
-      <Section>
+      <Section containerClass="max-w-3xl">
         <h2 className="mb-4 text-center font-heading text-3xl">
           Featured services
         </h2>
-        <ul className="mx-auto grid max-w-3xl gap-4 md:grid-cols-2">
+        <ul className="grid gap-4 md:grid-cols-2">
           {home.featuredServices.map((s) => (
             <li key={s} className="rounded bg-bp-surface p-4 text-center">
               {s}
@@ -54,7 +54,7 @@ export default function Page() {
           ))}
         </ul>
       </Section>
-      <Section className="mx-auto max-w-3xl">
+      <Section containerClass="max-w-3xl">
         <TestimonialCard
           quote={home.testimonialHighlight.quote}
           author={home.testimonialHighlight.author}

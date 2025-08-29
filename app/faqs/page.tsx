@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <>
       <PageHero title="FAQs" />
-      <Section className="mx-auto max-w-3xl">
+      <Section containerClass="max-w-3xl">
         <FAQAccordion items={faqs} />
       </Section>
     </>
