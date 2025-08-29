@@ -22,60 +22,68 @@ export function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-bp-surface/80 text-white backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between p-4">
-        <Link href="/" className="font-heading text-xl">
+    <header className="sticky top-0 z-50 bg-bp-bg/80 backdrop-blur shadow-3d">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+        <Link href="/" className="font-heading text-2xl font-bold text-bp-primary drop-shadow">
           {site.name}
         </Link>
-        <nav className="hidden gap-6 md:flex">
-          {nav.map((n) => (
-            <Link key={n.href} href={n.href} className="hover:underline">
-              {n.label}
-            </Link>
+        <button
+          className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-bp-primary"
+          aria-label="Open menu"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+        <ul className={`flex-1 md:flex gap-6 items-center justify-center hidden md:flex ${open ? 'block' : 'hidden'}`}> 
+          {nav.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={`font-medium px-3 py-2 rounded transition-3d ${
+                  typeof window !== 'undefined' && window.location.pathname === link.href ? 'bg-bp-primary text-black shadow-3d' : 'hover:bg-bp-surface'
+                }`}
+                aria-current={typeof window !== 'undefined' && window.location.pathname === link.href ? 'page' : undefined}
+              >
+                {link.label}
+              </Link>
+            </li>
           ))}
-        </nav>
+        </ul>
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
-            className="hidden rounded bg-bp-primary px-3 py-1 text-black sm:block"
+            className="hidden md:inline-block bg-bp-primary text-black px-4 py-2 rounded-xl font-semibold shadow-3d transition-3d hover:scale-105"
           >
             Book a free consult
           </Link>
           <ThemeToggle />
-          <button
-            aria-label="Toggle menu"
-            className="md:hidden"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <X /> : <Menu />}
-          </button>
         </div>
-      </div>
+      </nav>
+      {/* Mobile menu */}
       {open && (
-        <nav className="border-t border-bp-muted bg-bp-surface md:hidden">
-          <ul className="flex flex-col items-center gap-4 py-4">
-            {nav.map((n) => (
-              <li key={n.href}>
-                <Link
-                  href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="block px-4 py-2 hover:underline"
-                >
-                  {n.label}
-                </Link>
-              </li>
-            ))}
-            <li className="sm:hidden">
+        <ul className="md:hidden bg-bp-bg border-t border-bp-surface px-4 py-2">
+          {nav.map((link) => (
+            <li key={link.href}>
               <Link
-                href="/contact"
+                href={link.href}
+                className={`block px-4 py-2 rounded transition-3d hover:bg-bp-surface`}
                 onClick={() => setOpen(false)}
-                className="rounded bg-bp-primary px-3 py-1 text-black"
+                aria-current={typeof window !== 'undefined' && window.location.pathname === link.href ? 'page' : undefined}
               >
-                Book a free consult
+                {link.label}
               </Link>
             </li>
-          </ul>
-        </nav>
+          ))}
+          <li>
+            <Link
+              href="/contact"
+              className="block bg-bp-primary text-black px-4 py-2 rounded-xl font-semibold shadow-3d mt-2"
+              onClick={() => setOpen(false)}
+            >
+              Book a free consult
+            </Link>
+          </li>
+        </ul>
       )}
     </header>
   )

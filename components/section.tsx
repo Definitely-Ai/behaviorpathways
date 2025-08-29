@@ -11,7 +11,7 @@ export function Section({
 }) {
   return (
     <section className={`py-16 ${className}`}>
-      <div className={`mx-auto max-w-5xl px-4 ${containerClass}`}>
+      <div className={`mx-auto max-w-5xl px-4 ${containerClass} rounded-2xl bg-bp-surface/60 shadow-3d backdrop-blur-md`}> 
         {children}
       </div>
     </section>

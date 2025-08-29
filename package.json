@@ -19,13 +19,15 @@
     ]
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.6",
+    "@fontsource/sora": "^5.2.6",
     "@radix-ui/react-accordion": "^1.2.12",
     "@vercel/og": "^0.8.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.542.0",
-    "next": "^14.2.32",
+    "next": "^15.5.2",
     "nodemailer": "^7.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
