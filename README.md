@@ -1,48 +1,42 @@
-# BehaviorPathways
+# Behavior Pathways
 
-A modern web application for understanding and tracking behavioral patterns.
+Marketing website for a small ABA therapy provider built with Next.js 14, TypeScript, and Tailwind CSS. Deploys easily to Vercel.
 
-## 🚀 Features
-
-- User-friendly interface for tracking behaviors
-- Visual representation of behavior patterns
-- Data analysis and insights
-- Responsive design for all devices
-
-## 🛠️ Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Definitely-Ai/behaviorpathways.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd behaviorpathways
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Development
-
-To start the development server:
+## 🚀 Getting Started
 
 ```bash
+npm install
 npm run dev
 ```
 
-## 🤝 Contributing
+## 📦 Scripts
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+- `npm run dev` – start development server
+- `npm run build` – build for production
+- `npm run start` – run production build
+- `npm run lint` – lint with ESLint
+- `npm run typecheck` – run TypeScript in strict mode
+- `npm test` – run Vitest unit tests
 
-## 📄 License
+## 🔐 Environment Variables
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Copy `.env.example` to `.env` and fill in:
+
+- `NEXT_PUBLIC_SITE_URL` – base URL for metadata
+- `CONTACT_TO_EMAIL` – email where form submissions are sent
+- `RESEND_API_KEY` – (optional) Resend API key
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` – (optional) SMTP settings
+- `HCAPTCHA_SITEKEY`, `HCAPTCHA_SECRET` – (optional) hCaptcha keys
+- `PLAUSIBLE_DOMAIN` – (optional) Plausible domain
+
+## 📄 Vercel Deployment
+
+1. Push to GitHub.
+2. Create a new project on [Vercel](https://vercel.com) and import the repository.
+3. Set build command to `next build` and output to `.next`.
+4. Add the environment variables above in Vercel project settings.
+5. Deploy.
+
+## 📝 License
+
+MIT
