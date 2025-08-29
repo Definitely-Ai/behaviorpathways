@@ -9,7 +9,10 @@ export async function generateStaticParams() {
 }
 
 
-export default function Page({ params }: { params: { slug: string } }) {
+
+export const dynamic = 'force-static'
+
+export default async function Page({ params }: { params: { slug: string } }) {
   const post = posts.find((p) => p.slug === params.slug)
   if (!post) notFound()
   const Content = post.component
