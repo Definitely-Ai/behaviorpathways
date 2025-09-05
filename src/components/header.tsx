@@ -10,37 +10,38 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200/50 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/60 shadow-sm">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">BP</span>
+        <Link href="/" className="flex items-center space-x-3 group">
+          <div className="h-10 w-10 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <span className="text-white font-bold text-sm">BP</span>
           </div>
-          <span className="font-bold text-xl">Behavior Pathways</span>
+          <span className="font-bold text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">Behavior Pathways</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-8">
           {siteConfig.navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors duration-300 relative group"
             >
               {item.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </nav>
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="outline" size="sm" asChild>
+          <Button variant="outline" size="sm" className="border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300" asChild>
             <Link href="/contact">
               <Phone className="h-4 w-4 mr-2" />
               Contact
             </Link>
           </Button>
-          <Button size="sm" asChild>
+          <Button size="sm" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300" asChild>
             <Link href="/contact">Book Free Call</Link>
           </Button>
         </div>
