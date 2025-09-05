@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -21,6 +22,7 @@ interface FormData {
 }
 
 export function ContactForm() {
+  const [state, handleSubmit] = useForm('mnnbjkyo')
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -31,13 +33,11 @@ export function ContactForm() {
     consent: false,
     honeypot: '',
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState('')
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     // Honeypot check
     if (formData.honeypot) {
       return
@@ -48,57 +48,32 @@ export function ContactForm() {
       return
     }
 
-    setIsSubmitting(true)
     setError('')
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-
-      if (response.ok) {
-        setIsSubmitted(true)
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          location: '',
-          contactMethod: 'email',
-          message: '',
-          consent: false,
-          honeypot: '',
-        })
-      } else {
-        const data = await response.json()
-        setError(data.error || 'Something went wrong. Please try again.')
-      }
-    } catch (err) {
-      setError('Something went wrong. Please try again.')
-    } finally {
-      setIsSubmitting(false)
-    }
+    handleSubmit(e)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value, type } = e.target
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+      [name]:
+        type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
     }))
   }
 
-  if (isSubmitted) {
+  if (state.succeeded) {
     return (
-      <Card className="max-w-2xl mx-auto">
+      <Card className="mx-auto max-w-2xl">
         <CardContent className="p-8 text-center">
-          <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold mb-2">Thank you!</h2>
+          <CheckCircle className="mx-auto mb-4 h-16 w-16 text-green-500" />
+          <h2 className="mb-2 text-2xl font-bold">Thank you!</h2>
           <p className="text-muted-foreground">
-            We&apos;ve received your message and will get back to you within two business days.
+            We&apos;ve received your message and will get back to you within two
+            business days.
           </p>
         </CardContent>
       </Card>
@@ -106,15 +81,16 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="max-w-2xl mx-auto">
+    <Card className="mx-auto max-w-2xl">
       <CardHeader>
         <CardTitle>Get in touch</CardTitle>
         <p className="text-muted-foreground">
-          Tell us about your family and how we can help. We&apos;ll respond within two business days.
+          Tell us about your family and how we can help. We&apos;ll respond
+          within two business days.
         </p>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleFormSubmit} className="space-y-6">
           {/* Honeypot field - hidden from users */}
           <input
             type="text"
@@ -126,7 +102,7 @@ export function ContactForm() {
             autoComplete="off"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="name">Name *</Label>
               <Input
@@ -136,6 +112,11 @@ export function ContactForm() {
                 onChange={handleChange}
                 required
                 placeholder="Your full name"
+              />
+              <ValidationError
+                prefix="Name"
+                field="name"
+                errors={state.errors}
               />
             </div>
             <div className="space-y-2">
@@ -149,10 +130,15 @@ export function ContactForm() {
                 required
                 placeholder="your.email@example.com"
               />
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+              />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="phone">Phone</Label>
               <Input
@@ -202,6 +188,11 @@ export function ContactForm() {
               placeholder="Tell us about your child and what you're hoping for..."
               rows={4}
             />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </div>
 
           <div className="flex items-start space-x-2">
@@ -222,15 +213,15 @@ export function ContactForm() {
           </div>
 
           {error && (
-            <div className="text-sm text-destructive bg-destructive/10 p-3 rounded-md">
+            <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">
               {error}
             </div>
           )}
 
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
-            {isSubmitting ? (
+          <Button type="submit" className="w-full" disabled={state.submitting}>
+            {state.submitting ? (
               <>
-                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Sending...
               </>
             ) : (
