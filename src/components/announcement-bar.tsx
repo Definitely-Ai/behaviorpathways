@@ -13,17 +13,23 @@ export function AnnouncementBar() {
       <div className="container py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <span className="text-sm font-semibold">✨ {siteConfig.announcement.message}</span>
+            <span className="text-sm font-semibold">
+              ✨ {siteConfig.announcement.message}
+            </span>
             {siteConfig.announcement.link && (
               <Link
                 href={siteConfig.announcement.link}
-                className="text-sm underline hover:no-underline font-medium transition-all duration-300 hover:text-yellow-200"
+                className="text-sm font-medium underline transition-all duration-300 hover:text-yellow-200 hover:no-underline"
               >
                 Learn more →
               </Link>
             )}
           </div>
-          <Button variant="ghost" size="sm" className="text-white hover:bg-white/10 transition-colors duration-300">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-white transition-colors duration-300 hover:bg-white/10"
+          >
             <X className="h-4 w-4" />
           </Button>
         </div>

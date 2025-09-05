@@ -15,31 +15,43 @@ interface CTABandProps {
   }
 }
 
-export function CTABand({ title, description, primaryAction, secondaryAction }: CTABandProps) {
+export function CTABand({
+  title,
+  description,
+  primaryAction,
+  secondaryAction,
+}: CTABandProps) {
   return (
-    <section className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 text-white py-16 md:py-20 overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 py-16 text-white md:py-20">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-purple-600/90 to-blue-800/90"></div>
-      <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-white/10 rounded-full blur-3xl"></div>
-      
+      <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-white/10 blur-3xl md:h-96 md:w-96"></div>
+      <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/10 blur-3xl md:h-96 md:w-96"></div>
+
       <div className="container relative z-10">
-        <div className="text-center space-y-6 md:space-y-8 max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{title}</h2>
-          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+        <div className="mx-auto max-w-4xl space-y-6 text-center md:space-y-8">
+          <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            {title}
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
             {description}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5 px-8 py-4 text-lg font-semibold" asChild>
-              <Link href={primaryAction.href}>
-                {primaryAction.text}
-              </Link>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-6">
+            <Button
+              size="lg"
+              className="transform bg-white px-8 py-4 text-lg font-semibold text-blue-600 shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-2xl"
+              asChild
+            >
+              <Link href={primaryAction.href}>{primaryAction.text}</Link>
             </Button>
             {secondaryAction && (
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-all duration-300 px-8 py-4 text-lg font-semibold" asChild>
-                <Link href={secondaryAction.href}>
-                  {secondaryAction.text}
-                </Link>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:bg-white hover:text-blue-600"
+                asChild
+              >
+                <Link href={secondaryAction.href}>{secondaryAction.text}</Link>
               </Button>
             )}
           </div>

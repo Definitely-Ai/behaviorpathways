@@ -14,7 +14,7 @@ export function TestimonialCarousel() {
     if (!isPlaying) return
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
+      setCurrentIndex((prevIndex) =>
         prevIndex === siteConfig.testimonials.length - 1 ? 0 : prevIndex + 1
       )
     }, 5000)
@@ -23,11 +23,15 @@ export function TestimonialCarousel() {
   }, [isPlaying])
 
   const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? siteConfig.testimonials.length - 1 : currentIndex - 1)
+    setCurrentIndex(
+      currentIndex === 0 ? siteConfig.testimonials.length - 1 : currentIndex - 1
+    )
   }
 
   const goToNext = () => {
-    setCurrentIndex(currentIndex === siteConfig.testimonials.length - 1 ? 0 : currentIndex + 1)
+    setCurrentIndex(
+      currentIndex === siteConfig.testimonials.length - 1 ? 0 : currentIndex + 1
+    )
   }
 
   const togglePlayPause = () => {
@@ -36,8 +40,10 @@ export function TestimonialCarousel() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center sm:text-left">What families say</h2>
+      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+        <h2 className="text-center text-2xl font-bold sm:text-left sm:text-3xl">
+          What families say
+        </h2>
         <div className="flex items-center justify-center space-x-2">
           <Button
             variant="outline"
@@ -46,7 +52,11 @@ export function TestimonialCarousel() {
             aria-label={isPlaying ? 'Pause testimonials' : 'Play testimonials'}
             className="h-10 w-10"
           >
-            {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+            {isPlaying ? (
+              <Pause className="h-4 w-4" />
+            ) : (
+              <Play className="h-4 w-4" />
+            )}
           </Button>
           <Button
             variant="outline"
@@ -71,7 +81,7 @@ export function TestimonialCarousel() {
 
       <div className="relative">
         <div className="overflow-hidden">
-          <div 
+          <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
@@ -91,7 +101,7 @@ export function TestimonialCarousel() {
         {siteConfig.testimonials.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full transition-colors ${
+            className={`h-2 w-2 rounded-full transition-colors ${
               index === currentIndex ? 'bg-primary' : 'bg-muted'
             }`}
             onClick={() => setCurrentIndex(index)}
