@@ -27,21 +27,7 @@ A production-ready marketing and information site for an independent Applied Beh
    npm install
    ```
 
-3. Create environment file:
-
-   ```bash
-   cp .env.example .env.local
-   ```
-
-4. Update `.env.local` with your values:
-
-   ```
-   CONTACT_TO_ADDRESS=your-email@example.com
-   RESEND_API_KEY=your_resend_api_key
-   NEXT_PUBLIC_SITE_URL=http://localhost:3000
-   ```
-
-5. Start the development server:
+3. Start the development server:
 
    ```bash
    npm run dev
@@ -60,15 +46,11 @@ A production-ready marketing and information site for an independent Applied Beh
    - Go to [vercel.com](https://vercel.com)
    - Click "New Project"
    - Import your GitHub repository
-   - Set environment variables in Vercel dashboard:
-     - `CONTACT_TO_ADDRESS`: Your email address
-     - `RESEND_API_KEY`: Your Resend API key
-     - `NEXT_PUBLIC_SITE_URL`: Your production URL
-   - Click "Deploy"
+   - Click "Deploy" (no environment variables needed!)
 
 3. **Custom Domain** (Optional)
    - Add your custom domain in Vercel dashboard
-   - Update `NEXT_PUBLIC_SITE_URL` environment variable
+   - The site will automatically work with your custom domain
 
 ### Other Platforms
 

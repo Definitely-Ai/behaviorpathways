@@ -32,7 +32,7 @@ export default function AboutPage() {
               credentials={[
                 'Board Certified Behavior Analyst (BCBA)',
                 'Licensed Behavior Analyst',
-                'Master\'s in Applied Behavior Analysis',
+                'Master&apos;s in Applied Behavior Analysis',
                 '10+ years experience'
               ]}
               email="hello@behaviorpathways.com"
@@ -52,7 +52,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-2xl font-bold mb-4">Our commitment</h2>
               <p className="text-muted-foreground">
-                We respect every family's culture and language. We listen first and tailor support to you.
+                We respect every family&apos;s culture and language. We listen first and tailor support to you.
               </p>
             </div>
           </div>

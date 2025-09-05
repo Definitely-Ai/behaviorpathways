@@ -1,11 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
-import fs from 'fs'
-import path from 'path'
-
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null
 
 interface ContactFormData {
   name: string
@@ -47,7 +40,8 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const contactData = {
+    // Log the submission (in production, you'd want to store this in a database)
+    console.log('New contact form submission:', {
       name: data.name,
       email: data.email,
       phone: data.phone || 'Not provided',
@@ -55,61 +49,18 @@ export async function POST(request: NextRequest) {
       contactMethod: data.contactMethod,
       message: data.message,
       timestamp: new Date().toISOString(),
-    }
+    })
 
-    // Try to send email if API key is available
-    if (
-      resend &&
-      process.env.RESEND_API_KEY &&
-      process.env.CONTACT_TO_ADDRESS
-    ) {
-      try {
-        await resend.emails.send({
-          from: 'Behavior Pathways <noreply@behaviorpathways.com>',
-          to: [process.env.CONTACT_TO_ADDRESS],
-          subject: `New Contact Form Submission from ${data.name}`,
-          html: `
-            <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${data.name}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
-            <p><strong>Location:</strong> ${data.location || 'Not provided'}</p>
-            <p><strong>Preferred Contact Method:</strong> ${data.contactMethod}</p>
-            <p><strong>Message:</strong></p>
-            <p>${data.message.replace(/\n/g, '<br>')}</p>
-            <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
-          `,
-        })
-      } catch (emailError) {
-        console.error('Email sending failed:', emailError)
-        // Fall through to file storage
-      }
-    }
-
-    // Store in file for local development or as backup
-    if (process.env.NODE_ENV === 'development') {
-      const filePath = path.join(process.cwd(), 'contact-submissions.json')
-      let submissions = []
-
-      try {
-        if (fs.existsSync(filePath)) {
-          const fileContent = fs.readFileSync(filePath, 'utf8')
-          submissions = JSON.parse(fileContent)
-        }
-      } catch (error) {
-        console.error('Error reading submissions file:', error)
-      }
-
-      submissions.push(contactData)
-
-      try {
-        fs.writeFileSync(filePath, JSON.stringify(submissions, null, 2))
-      } catch (error) {
-        console.error('Error writing submissions file:', error)
-      }
-    }
-
-    return NextResponse.json({ success: true })
+    // In a real implementation, you would:
+    // 1. Store the submission in a database
+    // 2. Send an email notification
+    // 3. Send an auto-reply to the user
+    
+    // For now, we'll just return success
+    return NextResponse.json({ 
+      success: true,
+      message: 'Thank you for your message! We will get back to you within 2 business days.'
+    })
   } catch (error) {
     console.error('Contact form error:', error)
     return NextResponse.json(

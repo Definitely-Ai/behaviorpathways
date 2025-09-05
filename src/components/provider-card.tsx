@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Mail, Phone, MapPin } from 'lucide-react'
@@ -28,9 +29,11 @@ export function ProviderCard({
       <CardHeader className="text-center">
         <div className="w-32 h-32 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
           {image ? (
-            <img
+            <Image
               src={image}
               alt={name}
+              width={128}
+              height={128}
               className="w-full h-full rounded-full object-cover"
             />
           ) : (

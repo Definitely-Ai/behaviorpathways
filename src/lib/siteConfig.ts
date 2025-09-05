@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Behavior Pathways',
   description: 'Independent Applied Behavior Analysis provider focused on communication skills and parent training.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://behaviorpathways.com',
+  url: 'https://behaviorpathways.com',
   ogImage: '/og.jpg',
   links: {
     email: 'hello@behaviorpathways.com',

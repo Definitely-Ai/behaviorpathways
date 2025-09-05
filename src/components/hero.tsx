@@ -82,7 +82,7 @@ export function Hero() {
             <Card className="p-6">
               <CardContent className="p-0">
                 <blockquote className="text-lg italic text-muted-foreground">
-                  "Valentina helped my daughter find her voice and we learned how to support her at home."
+                  &ldquo;Valentina helped my daughter find her voice and we learned how to support her at home.&rdquo;
                 </blockquote>
                 <footer className="mt-4 text-sm font-medium">- M.L.</footer>
               </CardContent>

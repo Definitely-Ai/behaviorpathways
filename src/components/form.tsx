@@ -98,7 +98,7 @@ export function ContactForm() {
           <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-2">Thank you!</h2>
           <p className="text-muted-foreground">
-            We've received your message and will get back to you within two business days.
+            We&apos;ve received your message and will get back to you within two business days.
           </p>
         </CardContent>
       </Card>
@@ -110,7 +110,7 @@ export function ContactForm() {
       <CardHeader>
         <CardTitle>Get in touch</CardTitle>
         <p className="text-muted-foreground">
-          Tell us about your family and how we can help. We'll respond within two business days.
+          Tell us about your family and how we can help. We&apos;ll respond within two business days.
         </p>
       </CardHeader>
       <CardContent>

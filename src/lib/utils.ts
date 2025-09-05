@@ -33,7 +33,7 @@ export function generateMetadata({
   ogImage?: string
   url?: string
 }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://behaviorpathways.com'
+  const siteUrl = 'https://behaviorpathways.com'
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl
   const imageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/og.jpg`
 

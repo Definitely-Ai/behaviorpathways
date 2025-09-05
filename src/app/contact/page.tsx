@@ -86,9 +86,9 @@ export default function ContactPage() {
                   <CardTitle>We are honored to hear your story</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    Every family's journey is unique. We're here to listen, understand, and provide the support that works best for your child and your family.
-                  </p>
+                                      <p className="text-muted-foreground">
+                      Every family&apos;s journey is unique. We&apos;re here to listen, understand, and provide the support that works best for your child and your family.
+                    </p>
                 </CardContent>
               </Card>
             </div>

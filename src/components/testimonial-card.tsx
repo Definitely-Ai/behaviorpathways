@@ -10,7 +10,7 @@ export function TestimonialCard({ quote, author }: TestimonialCardProps) {
     <Card className="h-full">
       <CardContent className="p-6">
         <blockquote className="text-lg italic text-muted-foreground mb-4">
-          "{quote}"
+          &ldquo;{quote}&rdquo;
         </blockquote>
         <footer className="text-sm font-medium">- {author}</footer>
       </CardContent>
