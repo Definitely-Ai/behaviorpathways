@@ -11,7 +11,11 @@ export function Footer() {
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg">
-                <span className="text-sm font-bold text-white">BP</span>
+                <img
+                  src="/icon0.svg"
+                  alt="Behavior Pathways Logo"
+                  className="h-6 w-6 text-white"
+                />
               </div>
               <span className="text-xl font-bold text-gray-900">
                 Behavior Pathways

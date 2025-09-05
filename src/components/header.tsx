@@ -15,7 +15,11 @@ export function Header() {
         <Link href="/" className="group flex items-center space-x-4">
           <div className="relative">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl">
-              <span className="text-lg font-bold text-white">BP</span>
+              <img
+                src="/icon0.svg"
+                alt="Behavior Pathways Logo"
+                className="h-8 w-8 text-white"
+              />
             </div>
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 opacity-0 blur transition-all duration-300 group-hover:opacity-20"></div>
           </div>
