@@ -7,6 +7,7 @@ import { AnnouncementBar } from '@/components/announcement-bar'
 import { ThemeProvider } from '@/components/theme-provider'
 import { generateOrganizationSchema } from '@/lib/schema'
 import { siteConfig } from '@/lib/siteConfig'
+import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -69,17 +70,6 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
   alternates: {
     canonical: siteConfig.url,
   },
@@ -122,6 +112,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )

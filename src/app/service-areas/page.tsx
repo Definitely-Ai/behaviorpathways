@@ -118,8 +118,9 @@ export default function ServiceAreasPage() {
                     Flexible Scheduling
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    We work around your family's schedule and can accommodate
-                    school hours, after-school activities, and weekend sessions.
+                    We work around your family&apos;s schedule and can
+                    accommodate school hours, after-school activities, and
+                    weekend sessions.
                   </p>
                 </div>
                 <div className="space-y-3">

@@ -35,7 +35,7 @@ export function ContactForm() {
   })
   const [error, setError] = useState('')
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     // Honeypot check

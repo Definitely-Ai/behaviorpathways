@@ -105,12 +105,12 @@ export default function BlogPage() {
           {/* Call to Action */}
           <div className="glass-card mt-16 rounded-xl p-8 text-center">
             <h2 className="mb-4 text-2xl font-bold text-foreground">
-              Ready to Transform Your Child's Communication Journey?
+              Ready to Transform Your Child&apos;s Communication Journey?
             </h2>
             <p className="mx-auto mb-6 max-w-2xl text-muted-foreground">
               Our expert ABA therapy services in Naples, Bonita Springs, and
               Collier County can help your family achieve the breakthroughs
-              you're reading about.
+              you&apos;re reading about.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link

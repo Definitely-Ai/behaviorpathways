@@ -10,6 +10,9 @@ export interface MDXFrontmatter {
   ogImage?: string
   date?: string
   published?: boolean
+  featured?: boolean
+  tags?: string[]
+  author?: string
 }
 
 export interface MDXContent extends MDXFrontmatter {
@@ -19,7 +22,7 @@ export interface MDXContent extends MDXFrontmatter {
 
 export function getMDXContent(type: 'pages' | 'blog'): MDXContent[] {
   const directory = path.join(contentDirectory, type)
-  
+
   if (!fs.existsSync(directory)) {
     return []
   }
@@ -52,7 +55,10 @@ export function getMDXContent(type: 'pages' | 'blog'): MDXContent[] {
   })
 }
 
-export function getMDXContentBySlug(type: 'pages' | 'blog', slug: string): MDXContent | null {
+export function getMDXContentBySlug(
+  type: 'pages' | 'blog',
+  slug: string
+): MDXContent | null {
   const allContent = getMDXContent(type)
   return allContent.find((item) => item.slug === slug) || null
 }
