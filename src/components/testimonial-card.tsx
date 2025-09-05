@@ -7,20 +7,22 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ quote, author }: TestimonialCardProps) {
   return (
-    <Card className="group h-full glass-card border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scaleIn">
+    <Card className="glass-card animate-scaleIn group h-full border-0 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <CardContent className="p-8">
         <div className="flex items-start space-x-4">
-          <div className="w-12 h-12 bg-gradient-to-r from-[#71c1f2] to-[#8dd3f7] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-primary to-primary/80 text-lg font-bold text-primary-foreground">
             {author.charAt(0)}
           </div>
           <div className="flex-1">
-            <blockquote className="text-lg text-gray-700 leading-relaxed mb-4 group-hover:text-gray-800 transition-colors duration-300">
+            <blockquote className="mb-4 text-lg leading-relaxed text-foreground transition-colors duration-300 group-hover:text-foreground">
               &ldquo;{quote}&rdquo;
             </blockquote>
-            <footer className="text-sm font-semibold text-gray-600">- {author}</footer>
+            <footer className="text-sm font-semibold text-muted-foreground">
+              - {author}
+            </footer>
           </div>
         </div>
-        <div className="absolute top-4 right-4 text-yellow-400 text-xl opacity-60">
+        <div className="absolute right-4 top-4 text-xl text-yellow-400 opacity-60">
           ⭐
         </div>
       </CardContent>

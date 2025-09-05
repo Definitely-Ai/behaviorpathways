@@ -61,6 +61,9 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code',
   },
+  alternates: {
+    canonical: siteConfig.url,
+  },
 }
 
 export default function RootLayout({
@@ -73,7 +76,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="apple-mobile-web-app-title" content="Behavior Pathways" />
+        <meta name="theme-color" content="#71c1f2" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

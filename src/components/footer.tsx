@@ -5,7 +5,7 @@ import { siteConfig } from '@/lib/siteConfig'
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-gray-50">
+    <footer className="border-t border-border bg-muted/30">
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
@@ -20,11 +20,11 @@ export function Footer() {
                   className="h-6 w-6 text-white"
                 />
               </div>
-              <span className="text-xl font-bold text-gray-900">
+              <span className="text-xl font-bold text-foreground">
                 Behavior Pathways
               </span>
             </div>
-            <p className="text-sm leading-relaxed text-gray-600">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               Independent communication starts here. Personalized ABA support
               that meets you at home, at school, and in the community.
             </p>
@@ -32,12 +32,12 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-gray-900">Quick Links</h3>
+            <h3 className="font-semibold text-foreground">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   Services
                 </Link>
@@ -45,7 +45,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/approach"
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   Our Approach
                 </Link>
@@ -53,7 +53,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/parent-training"
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   Parent Training
                 </Link>
@@ -61,7 +61,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/testimonials"
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   Testimonials
                 </Link>
@@ -71,12 +71,12 @@ export function Footer() {
 
           {/* Resources */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-gray-900">Resources</h3>
+            <h3 className="font-semibold text-foreground">Resources</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/resources"
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   Resource Library
                 </Link>
@@ -84,7 +84,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   Blog
                 </Link>
@@ -92,7 +92,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   About Us
                 </Link>
@@ -100,7 +100,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   Contact
                 </Link>
@@ -110,55 +110,57 @@ export function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-gray-900">Contact</h3>
+            <h3 className="font-semibold text-foreground">Contact</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-blue-600" />
+                <Mail className="h-4 w-4 text-primary" />
                 <a
                   href={`mailto:${siteConfig.links.email}`}
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   {siteConfig.links.email}
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-blue-600" />
+                <Phone className="h-4 w-4 text-primary" />
                 <a
                   href={`tel:${siteConfig.links.phone}`}
-                  className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 >
                   {siteConfig.links.phone}
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-blue-600" />
-                <span className="text-gray-600">Serving local families</span>
+                <MapPin className="h-4 w-4 text-primary" />
+                <span className="text-muted-foreground">
+                  Serving local families
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-gray-200 pt-8">
+        <div className="mt-8 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-muted-foreground">
               © 2024 Behavior Pathways. All rights reserved.
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm sm:justify-end sm:gap-6">
               <Link
                 href="/privacy"
-                className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                className="text-muted-foreground transition-colors duration-300 hover:text-primary"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                className="text-muted-foreground transition-colors duration-300 hover:text-primary"
               >
                 Terms of Service
               </Link>
               <Link
                 href="/accessibility"
-                className="text-gray-600 transition-colors duration-300 hover:text-[#71c1f2]"
+                className="text-muted-foreground transition-colors duration-300 hover:text-primary"
               >
                 Accessibility
               </Link>

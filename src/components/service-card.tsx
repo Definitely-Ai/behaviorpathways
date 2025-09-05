@@ -7,17 +7,25 @@ interface ServiceCardProps {
   icon: LucideIcon
 }
 
-export function ServiceCard({ title, description, icon: Icon }: ServiceCardProps) {
+export function ServiceCard({
+  title,
+  description,
+  icon: Icon,
+}: ServiceCardProps) {
   return (
-    <Card className="group h-full hover:shadow-xl transition-all duration-300 border-0 glass-card hover:-translate-y-1 animate-scaleIn">
+    <Card className="glass-card animate-scaleIn group h-full border-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <CardHeader className="pb-4">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#71c1f2] to-[#8dd3f7] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-          <Icon className="h-8 w-8 text-white" />
+        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 shadow-lg transition-transform duration-300 group-hover:scale-110">
+          <Icon className="h-8 w-8 text-primary-foreground" />
         </div>
-        <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-[#71c1f2] transition-colors duration-300">{title}</CardTitle>
+        <CardTitle className="text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary">
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{description}</p>
+        <p className="leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
+          {description}
+        </p>
       </CardContent>
     </Card>
   )
