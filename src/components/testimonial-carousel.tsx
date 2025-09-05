@@ -36,14 +36,15 @@ export function TestimonialCarousel() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-bold">What families say</h2>
-        <div className="flex items-center space-x-2">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center sm:text-left">What families say</h2>
+        <div className="flex items-center justify-center space-x-2">
           <Button
             variant="outline"
             size="icon"
             onClick={togglePlayPause}
             aria-label={isPlaying ? 'Pause testimonials' : 'Play testimonials'}
+            className="h-10 w-10"
           >
             {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
           </Button>
@@ -52,6 +53,7 @@ export function TestimonialCarousel() {
             size="icon"
             onClick={goToPrevious}
             aria-label="Previous testimonial"
+            className="h-10 w-10"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -60,6 +62,7 @@ export function TestimonialCarousel() {
             size="icon"
             onClick={goToNext}
             aria-label="Next testimonial"
+            className="h-10 w-10"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>

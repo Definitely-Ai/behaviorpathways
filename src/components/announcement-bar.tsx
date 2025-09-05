@@ -9,21 +9,21 @@ export function AnnouncementBar() {
   }
 
   return (
-    <div className="bg-primary text-primary-foreground">
-      <div className="container py-2">
+    <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <div className="container py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <span className="text-sm font-medium">{siteConfig.announcement.message}</span>
+          <div className="flex items-center space-x-3">
+            <span className="text-sm font-semibold">✨ {siteConfig.announcement.message}</span>
             {siteConfig.announcement.link && (
               <Link
                 href={siteConfig.announcement.link}
-                className="text-sm underline hover:no-underline"
+                className="text-sm underline hover:no-underline font-medium transition-all duration-300 hover:text-yellow-200"
               >
-                Learn more
+                Learn more →
               </Link>
             )}
           </div>
-          <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10">
+          <Button variant="ghost" size="sm" className="text-white hover:bg-white/10 transition-colors duration-300">
             <X className="h-4 w-4" />
           </Button>
         </div>

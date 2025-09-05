@@ -17,16 +17,16 @@ export default function HomePage() {
     <>
       <Hero />
       
-      <section className="py-20">
+      <section className="py-16 md:py-20">
         <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">How we help</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center space-y-4 mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">How we help</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
               Our services are designed for daily life. We practice where skills are used, not only in a clinic.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {siteConfig.services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -39,7 +39,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-muted/50">
+      <section className="py-16 md:py-20 bg-muted/50">
         <div className="container">
           <TestimonialCarousel />
         </div>

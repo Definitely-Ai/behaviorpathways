@@ -59,27 +59,29 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t bg-background">
-          <div className="container py-4 space-y-4">
-            {siteConfig.navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block text-sm font-medium transition-colors hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <div className="pt-4 space-y-2">
-              <Button variant="outline" className="w-full" asChild>
-                <Link href="/contact">
+        <div className="md:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-md">
+          <div className="container py-6 space-y-6">
+            <div className="space-y-4">
+              {siteConfig.navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-base font-medium text-gray-600 hover:text-blue-600 transition-colors duration-300 py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+            <div className="pt-4 border-t border-gray-200 space-y-3">
+              <Button variant="outline" className="w-full border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300" asChild>
+                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                   <Phone className="h-4 w-4 mr-2" />
                   Contact
                 </Link>
               </Button>
-              <Button className="w-full" asChild>
-                <Link href="/contact">Book Free Call</Link>
+              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg transition-all duration-300" asChild>
+                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Book Free Call</Link>
               </Button>
             </div>
           </div>
