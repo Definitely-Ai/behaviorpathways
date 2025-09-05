@@ -31,37 +31,38 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center space-x-1 lg:flex">
-          {siteConfig.navigation.map((item) => (
+          {siteConfig.navigation.map((item, index) => (
             <Link
               key={item.name}
               href={item.href}
-              className="group relative rounded-xl px-4 py-2 text-sm font-semibold text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
+              className="group relative rounded-xl px-4 py-2 text-sm font-semibold text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 hover:scale-105"
+              style={{
+                animationDelay: `${index * 100}ms`,
+                animation: 'fadeInDown 0.6s ease-out forwards'
+              }}
             >
-              <span className="relative z-10">{item.name}</span>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <span className="relative z-10 transition-all duration-300 group-hover:translate-x-0.5">{item.name}</span>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105"></div>
+              <div className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:left-0 group-hover:w-full"></div>
             </Link>
           ))}
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center space-x-3 lg:flex">
+        <div className="hidden items-center lg:flex">
           <Button
-            variant="ghost"
             size="sm"
-            className="text-gray-600 transition-all duration-300 hover:bg-blue-50 hover:text-blue-600"
+            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-2.5 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl hover:-translate-y-0.5"
+            style={{
+              animation: 'pulse 2s infinite'
+            }}
             asChild
           >
-            <Link href="/contact">
-              <Phone className="mr-2 h-4 w-4" />
-              Contact
+            <Link href="/contact" className="relative z-10 flex items-center">
+              <Phone className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
+              <span className="font-semibold">Book Free Call</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </Link>
-          </Button>
-          <Button
-            size="sm"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-2 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl hover:-translate-y-0.5"
-            asChild
-          >
-            <Link href="/contact">Book Free Call</Link>
           </Button>
         </div>
 
@@ -85,36 +86,32 @@ export function Header() {
         <div className="border-t border-gray-200/50 bg-white/95 backdrop-blur-xl lg:hidden">
           <div className="container space-y-8 py-8">
             <div className="grid grid-cols-2 gap-4">
-              {siteConfig.navigation.map((item) => (
+              {siteConfig.navigation.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="group rounded-xl bg-gray-50 p-4 text-center transition-all duration-300 hover:bg-blue-50 hover:shadow-md"
+                  className="group rounded-xl bg-gray-50 p-4 text-center transition-all duration-300 hover:bg-blue-50 hover:shadow-md hover:scale-105"
                   onClick={() => setIsMenuOpen(false)}
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                    animation: 'slideInRight 0.5s ease-out forwards'
+                  }}
                 >
-                  <span className="text-sm font-semibold text-gray-700 group-hover:text-blue-700">
+                  <span className="text-sm font-semibold text-gray-700 transition-colors duration-300 group-hover:text-blue-700">
                     {item.name}
                   </span>
                 </Link>
               ))}
             </div>
-            <div className="space-y-4 border-t border-gray-200 pt-6">
+            <div className="border-t border-gray-200 pt-6">
               <Button
-                variant="outline"
-                className="w-full border-gray-300 text-gray-600 transition-all duration-300 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600"
+                className="group relative w-full overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 py-3 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl"
                 asChild
               >
-                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                  <Phone className="mr-2 h-4 w-4" />
-                  Contact Us
-                </Link>
-              </Button>
-              <Button
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl"
-                asChild
-              >
-                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                  Book Free Call
+                <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="relative z-10 flex items-center justify-center">
+                  <Phone className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                  <span className="text-base font-semibold">Book Free Call</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                 </Link>
               </Button>
             </div>
