@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -16,9 +17,11 @@ export function Header() {
         <Link href="/" className="group flex items-center space-x-4">
           <div className="relative">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#71c1f2] via-[#4a9fd1] to-[#8dd3f7] shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:animate-glow">
-              <img 
+              <Image 
                 src="/icon0.svg" 
                 alt="Behavior Pathways Logo" 
+                width={32}
+                height={32}
                 className="h-8 w-8 text-white transition-transform duration-300 group-hover:rotate-12"
               />
             </div>

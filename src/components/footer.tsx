@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { siteConfig } from '@/lib/siteConfig'
 
@@ -11,9 +12,11 @@ export function Footer() {
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-[#71c1f2] to-[#8dd3f7] shadow-lg">
-                <img
+                <Image
                   src="/icon0.svg"
                   alt="Behavior Pathways Logo"
+                  width={24}
+                  height={24}
                   className="h-6 w-6 text-white"
                 />
               </div>
