@@ -27,6 +27,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Behavior Pathways' }],
   creator: 'Behavior Pathways',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
+  manifest: '/manifest.json',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -66,6 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <meta name="apple-mobile-web-app-title" content="Behavior Pathways" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -23,7 +23,7 @@ export function Header() {
             <span className="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
               Behavior Pathways
             </span>
-            <span className="text-xs font-medium text-gray-500 -mt-1">
+            <span className="-mt-1 text-xs font-medium text-gray-500">
               ABA Services
             </span>
           </div>
@@ -35,14 +35,16 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="group relative rounded-xl px-4 py-2 text-sm font-semibold text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 hover:scale-105"
+              className="group relative rounded-xl px-4 py-2 text-sm font-semibold text-gray-700 transition-all duration-300 hover:scale-105 hover:bg-blue-50 hover:text-blue-700"
               style={{
                 animationDelay: `${index * 100}ms`,
-                animation: 'fadeInDown 0.6s ease-out forwards'
+                animation: 'fadeInDown 0.6s ease-out forwards',
               }}
             >
-              <span className="relative z-10 transition-all duration-300 group-hover:translate-x-0.5">{item.name}</span>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105"></div>
+              <span className="relative z-10 transition-all duration-300 group-hover:translate-x-0.5">
+                {item.name}
+              </span>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-all duration-300 group-hover:scale-105 group-hover:opacity-100"></div>
               <div className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:left-0 group-hover:w-full"></div>
             </Link>
           ))}
@@ -52,14 +54,14 @@ export function Header() {
         <div className="hidden items-center lg:flex">
           <Button
             size="sm"
-            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-2.5 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl hover:-translate-y-0.5"
+            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-2.5 text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl"
             style={{
-              animation: 'pulse 2s infinite'
+              animation: 'pulse 2s infinite',
             }}
             asChild
           >
             <Link href="/contact" className="relative z-10 flex items-center">
-              <Phone className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
+              <Phone className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
               <span className="font-semibold">Book Free Call</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </Link>
@@ -70,13 +72,19 @@ export function Header() {
         <Button
           variant="ghost"
           size="icon"
-          className="lg:hidden h-12 w-12 rounded-xl hover:bg-blue-50"
+          className="h-12 w-12 rounded-xl hover:bg-blue-50 lg:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <div className="relative h-6 w-6">
-            <span className={`absolute left-0 top-1 h-0.5 w-6 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`absolute left-0 top-3 h-0.5 w-6 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`absolute left-0 top-5 h-0.5 w-6 bg-gray-600 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span
+              className={`absolute left-0 top-1 h-0.5 w-6 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'translate-y-2 rotate-45' : ''}`}
+            ></span>
+            <span
+              className={`absolute left-0 top-3 h-0.5 w-6 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}
+            ></span>
+            <span
+              className={`absolute left-0 top-5 h-0.5 w-6 bg-gray-600 transition-all duration-300 ${isMenuOpen ? '-translate-y-2 -rotate-45' : ''}`}
+            ></span>
           </div>
         </Button>
       </div>
@@ -90,11 +98,11 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="group rounded-xl bg-gray-50 p-4 text-center transition-all duration-300 hover:bg-blue-50 hover:shadow-md hover:scale-105"
+                  className="group rounded-xl bg-gray-50 p-4 text-center transition-all duration-300 hover:scale-105 hover:bg-blue-50 hover:shadow-md"
                   onClick={() => setIsMenuOpen(false)}
                   style={{
                     animationDelay: `${index * 100}ms`,
-                    animation: 'slideInRight 0.5s ease-out forwards'
+                    animation: 'slideInRight 0.5s ease-out forwards',
                   }}
                 >
                   <span className="text-sm font-semibold text-gray-700 transition-colors duration-300 group-hover:text-blue-700">
@@ -108,9 +116,15 @@ export function Header() {
                 className="group relative w-full overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 py-3 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl"
                 asChild
               >
-                <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="relative z-10 flex items-center justify-center">
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="relative z-10 flex items-center justify-center"
+                >
                   <Phone className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                  <span className="text-base font-semibold">Book Free Call</span>
+                  <span className="text-base font-semibold">
+                    Book Free Call
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                 </Link>
               </Button>
