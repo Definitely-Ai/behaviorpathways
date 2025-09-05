@@ -41,7 +41,7 @@ export function TestimonialCarousel() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-        <h2 className="text-center text-2xl font-bold sm:text-left sm:text-3xl">
+        <h2 className="text-center text-2xl font-bold text-foreground sm:text-left sm:text-3xl">
           What families say
         </h2>
         <div className="flex items-center justify-center space-x-2">

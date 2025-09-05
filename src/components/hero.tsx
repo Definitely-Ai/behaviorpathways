@@ -97,7 +97,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-primary transition-all duration-300 hover:border-primary/80 hover:bg-primary/10 hover:text-primary"
+                className="border-2 border-primary text-foreground transition-all duration-300 hover:border-primary/80 hover:bg-primary/10 hover:text-primary"
                 asChild
               >
                 <Link href="/approach">Learn how we work</Link>

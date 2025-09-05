@@ -20,7 +20,7 @@ export default function HomePage() {
       <section className="py-16 md:py-20">
         <div className="container">
           <div className="mb-12 space-y-4 text-center md:mb-16">
-            <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
               How we help
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">

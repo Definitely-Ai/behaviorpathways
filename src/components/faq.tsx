@@ -20,7 +20,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        <span className="font-medium">{question}</span>
+        <span className="font-medium text-foreground">{question}</span>
         {isOpen ? (
           <ChevronUp className="ml-2 h-4 w-4 flex-shrink-0" />
         ) : (
@@ -49,7 +49,7 @@ export function FAQ({ faqs }: FAQProps) {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-center text-3xl font-bold">
+      <h2 className="text-center text-3xl font-bold text-foreground">
         Frequently Asked Questions
       </h2>
       <div className="mx-auto max-w-3xl">

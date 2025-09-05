@@ -15,8 +15,8 @@ export default function ApproachPage() {
     <div className="py-12">
       <div className="container">
         <Breadcrumbs items={[{ label: 'Our Approach' }]} />
-        
-        <div className="max-w-4xl mx-auto">
+
+        <div className="mx-auto max-w-4xl">
           <Prose>
             <h1>Our Approach</h1>
             <p className="text-xl text-muted-foreground">
@@ -27,12 +27,16 @@ export default function ApproachPage() {
           <div className="my-16 space-y-12">
             {siteConfig.approach.map((step, index) => (
               <div key={index} className="flex items-start space-x-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
                   {step.step}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">{step.description}</p>
+                  <h3 className="mb-3 text-2xl font-bold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    {step.description}
+                  </p>
                 </div>
               </div>
             ))}
