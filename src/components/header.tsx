@@ -10,21 +10,21 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200/50 bg-white/95 shadow-lg backdrop-blur-xl supports-[backdrop-filter]:bg-white/80">
+    <header className="sticky top-0 z-50 w-full border-b border-blue-200/50 bg-white/95 shadow-lg backdrop-blur-xl supports-[backdrop-filter]:bg-white/80">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="group flex items-center space-x-4">
           <div className="relative">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl">
-              <img
-                src="/icon0.svg"
-                alt="Behavior Pathways Logo"
-                className="h-8 w-8 text-white"
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#71c1f2] via-[#4a9fd1] to-[#8dd3f7] shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:animate-glow">
+              <img 
+                src="/icon0.svg" 
+                alt="Behavior Pathways Logo" 
+                className="h-8 w-8 text-white transition-transform duration-300 group-hover:rotate-12"
               />
             </div>
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 opacity-0 blur transition-all duration-300 group-hover:opacity-20"></div>
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#71c1f2] via-[#4a9fd1] to-[#8dd3f7] opacity-0 blur transition-all duration-300 group-hover:opacity-30"></div>
           </div>
           <div className="flex flex-col">
-            <span className="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
+            <span className="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-[#71c1f2]">
               Behavior Pathways
             </span>
             <span className="-mt-1 text-xs font-medium text-gray-500">
@@ -39,7 +39,7 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="group relative rounded-xl px-4 py-2 text-sm font-semibold text-gray-700 transition-all duration-300 hover:scale-105 hover:bg-blue-50 hover:text-blue-700"
+              className="group relative rounded-xl px-4 py-2 text-sm font-semibold text-gray-700 transition-all duration-300 hover:scale-105 hover:bg-[#71c1f2]/10 hover:text-[#71c1f2]"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animation: 'fadeInDown 0.6s ease-out forwards',
@@ -48,8 +48,8 @@ export function Header() {
               <span className="relative z-10 transition-all duration-300 group-hover:translate-x-0.5">
                 {item.name}
               </span>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-all duration-300 group-hover:scale-105 group-hover:opacity-100"></div>
-              <div className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:left-0 group-hover:w-full"></div>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#71c1f2]/10 to-[#8dd3f7]/10 opacity-0 transition-all duration-300 group-hover:scale-105 group-hover:opacity-100"></div>
+              <div className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-[#71c1f2] to-[#8dd3f7] transition-all duration-300 group-hover:left-0 group-hover:w-full"></div>
             </Link>
           ))}
         </nav>
@@ -58,7 +58,7 @@ export function Header() {
         <div className="hidden items-center lg:flex">
           <Button
             size="sm"
-            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-2.5 text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl"
+            className="group relative overflow-hidden bg-gradient-to-r from-[#71c1f2] to-[#4a9fd1] px-8 py-2.5 text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:from-[#4a9fd1] hover:to-[#71c1f2] hover:shadow-xl hover:shadow-[#71c1f2]/30"
             style={{
               animation: 'pulse 2s infinite',
             }}
@@ -67,7 +67,7 @@ export function Header() {
             <Link href="/contact" className="relative z-10 flex items-center">
               <Phone className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
               <span className="font-semibold">Book Free Call</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#8dd3f7] to-[#71c1f2] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </Link>
           </Button>
         </div>
@@ -76,7 +76,7 @@ export function Header() {
         <Button
           variant="ghost"
           size="icon"
-          className="h-12 w-12 rounded-xl hover:bg-blue-50 lg:hidden"
+          className="h-12 w-12 rounded-xl hover:bg-[#71c1f2]/10 lg:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <div className="relative h-6 w-6">
@@ -102,14 +102,14 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="group rounded-xl bg-gray-50 p-4 text-center transition-all duration-300 hover:scale-105 hover:bg-blue-50 hover:shadow-md"
+                  className="group rounded-xl bg-gray-50 p-4 text-center transition-all duration-300 hover:scale-105 hover:bg-[#71c1f2]/10 hover:shadow-md"
                   onClick={() => setIsMenuOpen(false)}
                   style={{
                     animationDelay: `${index * 100}ms`,
                     animation: 'slideInRight 0.5s ease-out forwards',
                   }}
                 >
-                  <span className="text-sm font-semibold text-gray-700 transition-colors duration-300 group-hover:text-blue-700">
+                  <span className="text-sm font-semibold text-gray-700 transition-colors duration-300 group-hover:text-[#71c1f2]">
                     {item.name}
                   </span>
                 </Link>
@@ -117,7 +117,7 @@ export function Header() {
             </div>
             <div className="border-t border-gray-200 pt-6">
               <Button
-                className="group relative w-full overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 py-3 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl"
+                className="group relative w-full overflow-hidden bg-gradient-to-r from-[#71c1f2] to-[#4a9fd1] py-3 text-white shadow-lg transition-all duration-300 hover:from-[#4a9fd1] hover:to-[#71c1f2] hover:shadow-xl hover:shadow-[#71c1f2]/30"
                 asChild
               >
                 <Link
@@ -129,7 +129,7 @@ export function Header() {
                   <span className="text-base font-semibold">
                     Book Free Call
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#8dd3f7] to-[#71c1f2] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                 </Link>
               </Button>
             </div>

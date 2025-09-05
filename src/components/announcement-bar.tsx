@@ -9,7 +9,7 @@ export function AnnouncementBar() {
   }
 
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <div className="bg-gradient-to-r from-[#71c1f2] to-[#4a9fd1] text-white">
       <div className="container py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
@@ -19,7 +19,7 @@ export function AnnouncementBar() {
             {siteConfig.announcement.link && (
               <Link
                 href={siteConfig.announcement.link}
-                className="text-sm font-medium underline transition-all duration-300 hover:text-yellow-200 hover:no-underline"
+                className="text-sm font-medium underline transition-all duration-300 hover:text-[#8dd3f7] hover:no-underline"
               >
                 Learn more →
               </Link>
