@@ -24,9 +24,10 @@ export default function HomePage() {
               How we help
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
-              Our ABA therapy services in Naples, Bonita Springs, and Collier
-              County are designed for daily life. We practice where skills are
-              used, not only in a clinic.
+              Our ABA therapy services in Naples, Fort Myers, Bonita Springs,
+              Estero, Marco Island, and throughout Collier & Lee Counties are
+              designed for daily life. We practice where skills are used, not
+              only in a clinic.
             </p>
           </div>
 
@@ -51,7 +52,7 @@ export default function HomePage() {
 
       <CTABand
         title="Ready to get started?"
-        description="Book a free intro call to learn how we can help your family in Naples, Bonita Springs, or anywhere in Collier County."
+        description="Book a free intro call to learn how we can help your family in Naples, Fort Myers, Bonita Springs, Estero, Marco Island, or anywhere in Collier & Lee Counties."
         primaryAction={{
           text: 'Book Free Call',
           href: '/contact',

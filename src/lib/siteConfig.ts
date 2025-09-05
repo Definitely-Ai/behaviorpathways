@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Behavior Pathways',
   description:
-    'Independent ABA therapy services in Naples, Bonita Springs, and Collier County, Florida. Specialized in autism communication skills and parent training.',
+    'Independent ABA therapy services in Naples, Fort Myers, Bonita Springs, Estero, Marco Island, and throughout Collier & Lee Counties, Florida. Specialized in autism communication skills and parent training.',
   url: 'https://behaviorpathways.com',
   ogImage: '/og.jpg',
   links: {
@@ -11,18 +11,24 @@ export const siteConfig = {
   location: {
     city: 'Naples',
     state: 'Florida',
-    county: 'Collier County',
+    county: 'Collier & Lee Counties',
     zipCode: '34102',
     serviceAreas: [
       'Naples',
+      'Fort Myers',
       'Bonita Springs',
-      'Marco Island',
       'Estero',
+      'Marco Island',
+      'Cape Coral',
+      'Lehigh Acres',
       'Golden Gate',
       'Immokalee',
       'Ave Maria',
       'North Naples',
       'East Naples',
+      'Sanibel',
+      'Captiva',
+      'Fort Myers Beach',
     ],
     coordinates: {
       lat: 26.142,

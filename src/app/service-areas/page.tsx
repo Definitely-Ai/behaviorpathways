@@ -7,9 +7,10 @@ import { generateMetadata as generatePageMetadata } from '@/lib/utils'
 import { MapPin, Clock, Car } from 'lucide-react'
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'ABA Therapy Service Areas - Naples, Bonita Springs, Collier County',
+  title:
+    'ABA Therapy Service Areas - Naples, Fort Myers, Bonita Springs, Collier & Lee Counties',
   description:
-    'Behavior Pathways provides in-home ABA therapy services throughout Naples, Bonita Springs, Marco Island, Estero, and all of Collier County, Florida.',
+    'Behavior Pathways provides in-home ABA therapy services throughout Naples, Fort Myers, Bonita Springs, Estero, Marco Island, and all of Collier & Lee Counties, Florida.',
 })
 
 const serviceAreas = [
@@ -21,10 +22,22 @@ const serviceAreas = [
     travelTime: '0-15 minutes',
   },
   {
-    name: 'Bonita Springs',
+    name: 'Fort Myers',
+    description:
+      'Comprehensive autism therapy services in Fort Myers with flexible scheduling and community support.',
+    features: [
+      'Downtown Fort Myers',
+      'Gateway',
+      'Colonial Boulevard',
+      'Cypress Lake',
+    ],
+    travelTime: '20-30 minutes',
+  },
+  {
+    name: 'Bonita Springs & Estero',
     description:
       "Comprehensive autism therapy services with flexible scheduling to fit your family's needs.",
-    features: ['Bonita Springs', 'Estero', 'San Carlos Park'],
+    features: ['Bonita Springs', 'Estero', 'San Carlos Park', 'Coconut Point'],
     travelTime: '15-25 minutes',
   },
   {
@@ -35,14 +48,23 @@ const serviceAreas = [
     travelTime: '25-35 minutes',
   },
   {
-    name: 'Collier County',
+    name: 'Cape Coral',
     description:
-      'We serve all areas of Collier County including rural communities and smaller towns.',
+      'ABA therapy services throughout Cape Coral with convenient scheduling and local expertise.',
+    features: ['Cape Coral', 'Burnt Store', 'Pine Island'],
+    travelTime: '25-35 minutes',
+  },
+  {
+    name: 'Collier & Lee Counties',
+    description:
+      'We serve all areas of Collier and Lee Counties including rural communities and smaller towns.',
     features: [
       'Immokalee',
       'Ave Maria',
-      'Golden Gate Estates',
-      'Everglades City',
+      'Lehigh Acres',
+      'Sanibel',
+      'Captiva',
+      'Fort Myers Beach',
     ],
     travelTime: '30-45 minutes',
   },
@@ -59,7 +81,8 @@ export default function ServiceAreasPage() {
             <h1>ABA Therapy Service Areas</h1>
             <p className="text-xl text-muted-foreground">
               We provide comprehensive ABA therapy services throughout Naples,
-              Bonita Springs, and all of Collier County, Florida.
+              Fort Myers, Bonita Springs, Estero, Marco Island, and all of
+              Collier & Lee Counties, Florida.
             </p>
           </Prose>
 
@@ -153,7 +176,7 @@ export default function ServiceAreasPage() {
 
           <CTABand
             title="Ready to get started?"
-            description="Contact us to learn more about our ABA therapy services in your area and schedule a free consultation."
+            description="Contact us to learn more about our ABA therapy services throughout Naples, Fort Myers, Bonita Springs, Estero, Marco Island, and Collier & Lee Counties. Schedule a free consultation today."
             primaryAction={{
               text: 'Contact Us',
               href: '/contact',

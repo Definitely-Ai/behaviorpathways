@@ -25,9 +25,10 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Independent ABA therapy services in Naples, Bonita Springs, and
-              Collier County, Florida. Personalized support that meets you at
-              home, at school, and in the community.
+              Independent ABA therapy services in Naples, Fort Myers, Bonita
+              Springs, Estero, Marco Island, and throughout Collier & Lee
+              Counties, Florida. Personalized support that meets you at home, at
+              school, and in the community.
             </p>
           </div>
 
@@ -134,7 +135,8 @@ export function Footer() {
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-primary" />
                 <span className="text-muted-foreground">
-                  Serving Naples, Bonita Springs & Collier County
+                  Serving Naples, Fort Myers, Bonita Springs, Estero, Marco
+                  Island & Southwest Florida
                 </span>
               </div>
             </div>
