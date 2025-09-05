@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/services',
     '/approach',
+    '/service-areas',
     '/parent-training',
     '/testimonials',
     '/resources',
@@ -29,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allPages.map((page) => ({
     url: `${baseUrl}${page}`,
-    lastModified: new Date(),
+    lastModified: new Date('2025-09-05'),
     changeFrequency: page === '' ? 'weekly' : 'monthly',
     priority: page === '' ? 1 : 0.8,
   }))

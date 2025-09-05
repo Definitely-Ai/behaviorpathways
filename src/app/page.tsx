@@ -24,8 +24,9 @@ export default function HomePage() {
               How we help
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
-              Our services are designed for daily life. We practice where skills
-              are used, not only in a clinic.
+              Our ABA therapy services in Naples, Bonita Springs, and Collier
+              County are designed for daily life. We practice where skills are
+              used, not only in a clinic.
             </p>
           </div>
 
@@ -50,14 +51,14 @@ export default function HomePage() {
 
       <CTABand
         title="Ready to get started?"
-        description="Book a free intro call to learn how we can help your family."
+        description="Book a free intro call to learn how we can help your family in Naples, Bonita Springs, or anywhere in Collier County."
         primaryAction={{
           text: 'Book Free Call',
           href: '/contact',
         }}
         secondaryAction={{
-          text: 'Learn More',
-          href: '/approach',
+          text: 'View Service Areas',
+          href: '/service-areas',
         }}
       />
     </>

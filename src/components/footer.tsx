@@ -25,8 +25,9 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Independent communication starts here. Personalized ABA support
-              that meets you at home, at school, and in the community.
+              Independent ABA therapy services in Naples, Bonita Springs, and
+              Collier County, Florida. Personalized support that meets you at
+              home, at school, and in the community.
             </p>
           </div>
 
@@ -133,7 +134,7 @@ export function Footer() {
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-primary" />
                 <span className="text-muted-foreground">
-                  Serving local families
+                  Serving Naples, Bonita Springs & Collier County
                 </span>
               </div>
             </div>
@@ -143,7 +144,7 @@ export function Footer() {
         <div className="mt-8 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
             <div className="text-sm text-muted-foreground">
-              © 2024 Behavior Pathways. All rights reserved.
+              © 2025 Behavior Pathways. All rights reserved.
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm sm:justify-end sm:gap-6">
               <Link

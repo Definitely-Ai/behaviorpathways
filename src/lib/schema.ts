@@ -16,9 +16,10 @@ export function generateOrganizationSchema() {
     },
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Your City',
-      addressRegion: 'Your State',
+      addressLocality: siteConfig.location.city,
+      addressRegion: siteConfig.location.state,
       addressCountry: 'US',
+      postalCode: siteConfig.location.zipCode,
     },
     sameAs: Object.values(siteConfig.social),
   }
@@ -37,19 +38,26 @@ export function generateLocalBusinessSchema() {
     email: siteConfig.links.email,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Your City',
-      addressRegion: 'Your State',
+      addressLocality: siteConfig.location.city,
+      addressRegion: siteConfig.location.state,
       addressCountry: 'US',
+      postalCode: siteConfig.location.zipCode,
     },
     serviceArea: {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 0,
-        longitude: 0,
+        latitude: siteConfig.location.coordinates.lat,
+        longitude: siteConfig.location.coordinates.lng,
       },
       geoRadius: '50000',
     },
+    areaServed: siteConfig.location.serviceAreas.map((area) => ({
+      '@type': 'City',
+      name: area,
+      addressRegion: siteConfig.location.state,
+      addressCountry: 'US',
+    })),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'ABA Services',
@@ -66,7 +74,9 @@ export function generateLocalBusinessSchema() {
   }
 }
 
-export function generateFAQSchema(faqs: Array<{ question: string; answer: string }>) {
+export function generateFAQSchema(
+  faqs: Array<{ question: string; answer: string }>
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

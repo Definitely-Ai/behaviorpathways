@@ -44,14 +44,15 @@ export function Hero() {
           <div className="space-y-10">
             <div className="space-y-6">
               <div className="animate-scaleIn mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                ✨ Trusted by 100+ families
+                ✨ Trusted by families across Naples & Collier County
               </div>
               <h1 className="animate-fadeInDown bg-gradient-to-r from-foreground via-primary to-primary/80 bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent sm:text-5xl lg:text-7xl">
                 Independent communication starts here
               </h1>
               <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                Personalized ABA support that meets you at home, at school, and
-                in the community so real life progress can happen every day.
+                Personalized ABA therapy services in Naples, Bonita Springs, and
+                Collier County, Florida. We meet you at home, at school, and in
+                the community so real life progress can happen every day.
               </p>
             </div>
 
