@@ -3,7 +3,18 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { CheckCircle, Home, Users, GraduationCap } from 'lucide-react'
+import {
+  CheckCircle,
+  Home,
+  Users,
+  GraduationCap,
+  MessageCircle,
+  Heart,
+  Star,
+  Shield,
+  Award,
+  Sparkles,
+} from 'lucide-react'
 
 const trustBadges = [
   { icon: CheckCircle, text: 'Licensed and insured' },
@@ -15,22 +26,25 @@ const miniSections = [
   {
     title: 'Communication skill building',
     description: 'From first requests to flexible conversations',
+    icon: MessageCircle,
   },
   {
     title: 'Parent coaching',
     description:
       'We teach you the tools so progress continues between sessions',
+    icon: Heart,
   },
   {
     title: 'School partnership',
     description: 'We collaborate with teachers so support is consistent',
+    icon: GraduationCap,
   },
 ]
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10 py-16 md:py-24">
-      {/* Background decoration */}
+      {/* Enhanced Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/10"></div>
       <div className="animate-float absolute right-0 top-0 h-64 w-64 rounded-full bg-gradient-to-br from-primary/10 to-primary/20 blur-3xl md:h-96 md:w-96"></div>
       <div
@@ -38,6 +52,32 @@ export function Hero() {
         style={{ animationDelay: '1s' }}
       ></div>
       <div className="absolute left-1/2 top-1/2 h-32 w-32 animate-pulse rounded-full bg-gradient-to-br from-primary/5 to-primary/10 blur-2xl"></div>
+
+      {/* Floating Icons */}
+      <div
+        className="animate-float absolute left-10 top-20 opacity-20"
+        style={{ animationDelay: '0.5s' }}
+      >
+        <MessageCircle className="h-8 w-8 text-primary" />
+      </div>
+      <div
+        className="animate-float absolute right-20 top-40 opacity-20"
+        style={{ animationDelay: '1.5s' }}
+      >
+        <Heart className="h-6 w-6 text-primary" />
+      </div>
+      <div
+        className="animate-float absolute bottom-32 left-20 opacity-20"
+        style={{ animationDelay: '2s' }}
+      >
+        <Star className="h-7 w-7 text-primary" />
+      </div>
+      <div
+        className="animate-float absolute bottom-20 right-10 opacity-20"
+        style={{ animationDelay: '0.8s' }}
+      >
+        <Sparkles className="h-5 w-5 text-primary" />
+      </div>
 
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -74,7 +114,9 @@ export function Hero() {
                     style={{ animationDelay: `${index * 200}ms` }}
                   >
                     <div className="flex items-start space-x-3 sm:space-x-4">
-                      <div className="mt-1.5 h-3 w-3 flex-shrink-0 rounded-full bg-gradient-to-r from-primary to-primary/80 transition-transform duration-300 group-hover:scale-110" />
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-primary/10 to-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-primary/30">
+                        <section.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-primary/80" />
+                      </div>
                       <div>
                         <h3 className="text-sm font-semibold text-foreground transition-colors duration-300 group-hover:text-primary sm:text-base">
                           {section.title}
@@ -92,18 +134,28 @@ export function Hero() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button
                 size="lg"
-                className="transform bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:from-primary/90 hover:to-primary hover:shadow-xl hover:shadow-primary/30"
+                className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 px-8 py-3 text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:from-primary/90 hover:to-primary hover:shadow-xl hover:shadow-primary/30"
                 asChild
               >
-                <Link href="/contact">Book a free intro call</Link>
+                <Link
+                  href="/contact"
+                  className="relative z-10 flex items-center"
+                >
+                  <Sparkles className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+                  <span className="font-semibold">Book a free intro call</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                </Link>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-primary text-foreground transition-all duration-300 hover:border-primary/80 hover:bg-primary/10 hover:text-primary"
+                className="group border-2 border-primary bg-transparent px-8 py-3 text-foreground transition-all duration-300 hover:border-primary/80 hover:bg-primary/10 hover:text-primary"
                 asChild
               >
-                <Link href="/approach">Learn how we work</Link>
+                <Link href="/approach" className="flex items-center">
+                  <GraduationCap className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+                  <span className="font-semibold">Learn how we work</span>
+                </Link>
               </Button>
             </div>
 

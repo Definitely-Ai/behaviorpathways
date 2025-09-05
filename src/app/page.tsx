@@ -2,6 +2,7 @@ import { Hero } from '@/components/hero'
 import { TestimonialCarousel } from '@/components/testimonial-carousel'
 import { ServiceCard } from '@/components/service-card'
 import { CTABand } from '@/components/cta-band'
+import { VisualSeparator } from '@/components/visual-separator'
 import { siteConfig } from '@/lib/siteConfig'
 import { MessageCircle, Home, GraduationCap, Heart } from 'lucide-react'
 
@@ -43,6 +44,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <VisualSeparator />
 
       <section className="bg-muted/50 py-16 md:py-20">
         <div className="container">
