@@ -39,7 +39,7 @@ export function CTABand({
           <div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-6">
             <Button
               size="lg"
-              className="transform bg-white px-8 py-4 text-lg font-semibold text-[#71c1f2] shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-2xl animate-bounce"
+              className="transform bg-white px-8 py-4 text-lg font-semibold text-[#71c1f2] shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-2xl"
               asChild
             >
               <Link href={primaryAction.href}>{primaryAction.text}</Link>

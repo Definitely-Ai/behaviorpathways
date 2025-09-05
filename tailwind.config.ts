@@ -80,14 +80,14 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         pulse: {
-          '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(113, 193, 242, 0.4)' },
-          '50%': { transform: 'scale(1.05)', boxShadow: '0 0 0 10px rgba(113, 193, 242, 0)' },
+          '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(113, 193, 242, 0.2)' },
+          '50%': { transform: 'scale(1.02)', boxShadow: '0 0 0 4px rgba(113, 193, 242, 0)' },
         },
         bounce: {
           '0%, 20%, 53%, 80%, 100%': { transform: 'translateY(0)' },
-          '40%, 43%': { transform: 'translateY(-15px)' },
-          '70%': { transform: 'translateY(-8px)' },
-          '90%': { transform: 'translateY(-3px)' },
+          '40%, 43%': { transform: 'translateY(-3px)' },
+          '70%': { transform: 'translateY(-1px)' },
+          '90%': { transform: 'translateY(-0.5px)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },

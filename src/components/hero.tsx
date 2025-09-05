@@ -53,7 +53,7 @@ export function Hero() {
             </div>
 
             <div className="space-y-8">
-              <div className="rounded-2xl border border-[#71c1f2]/20 bg-white/60 p-6 shadow-lg backdrop-blur-sm animate-slideInLeft">
+              <div className="rounded-2xl glass-card p-6 shadow-lg animate-slideInLeft">
                 <p className="text-lg leading-relaxed text-gray-700">
                   We focus on communication first. When children can ask, share,
                   and participate, life opens up for everyone around them.
@@ -64,7 +64,7 @@ export function Hero() {
                 {miniSections.map((section, index) => (
                   <div
                     key={index}
-                    className="group rounded-xl border border-[#71c1f2]/30 bg-white/40 p-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/60 hover:shadow-lg sm:p-6 animate-scaleIn"
+                    className="group rounded-xl glass-card p-4 transition-all duration-300 hover:shadow-lg sm:p-6 animate-scaleIn"
                     style={{animationDelay: `${index * 200}ms`}}
                   >
                     <div className="flex items-start space-x-3 sm:space-x-4">
@@ -86,7 +86,7 @@ export function Hero() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button
                 size="lg"
-                className="transform bg-gradient-to-r from-[#71c1f2] to-[#4a9fd1] text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:from-[#4a9fd1] hover:to-[#71c1f2] hover:shadow-xl hover:shadow-[#71c1f2]/30 animate-bounce"
+                className="transform bg-gradient-to-r from-[#71c1f2] to-[#4a9fd1] text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:from-[#4a9fd1] hover:to-[#71c1f2] hover:shadow-xl hover:shadow-[#71c1f2]/30"
                 asChild
               >
                 <Link href="/contact">Book a free intro call</Link>
@@ -105,7 +105,7 @@ export function Hero() {
               {trustBadges.map((badge, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-2 rounded-full border border-[#71c1f2]/30 bg-white/60 px-3 py-2 text-xs text-gray-600 backdrop-blur-sm sm:text-sm animate-scaleIn"
+                  className="flex items-center space-x-2 rounded-full glass px-3 py-2 text-xs text-gray-600 sm:text-sm animate-scaleIn"
                   style={{animationDelay: `${index * 100}ms`}}
                 >
                   <badge.icon className="h-3 w-3 text-[#71c1f2] sm:h-4 sm:w-4" />
@@ -117,7 +117,7 @@ export function Hero() {
 
           <div className="space-y-6 lg:space-y-8">
             <div className="relative animate-slideInRight">
-              <Card className="border-0 bg-white/80 p-6 shadow-xl backdrop-blur-sm sm:p-8">
+              <Card className="border-0 glass-card p-6 shadow-xl sm:p-8">
                 <CardContent className="p-0">
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#71c1f2] to-[#8dd3f7] text-sm font-bold text-white sm:h-12 sm:w-12 sm:text-lg">
@@ -141,7 +141,7 @@ export function Hero() {
             </div>
 
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              <div className="group rounded-2xl border border-[#71c1f2]/20 bg-gradient-to-br from-[#71c1f2]/10 to-[#8dd3f7]/10 p-4 transition-all duration-300 hover:shadow-lg sm:p-6 animate-scaleIn" style={{animationDelay: '0.5s'}}>
+              <div className="group rounded-2xl glass-card p-4 transition-all duration-300 hover:shadow-lg sm:p-6 animate-scaleIn" style={{animationDelay: '0.5s'}}>
                 <div className="text-center">
                   <div className="bg-gradient-to-r from-[#71c1f2] to-[#4a9fd1] bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">
                     10+
@@ -151,7 +151,7 @@ export function Hero() {
                   </div>
                 </div>
               </div>
-              <div className="group rounded-2xl border border-[#8dd3f7]/20 bg-gradient-to-br from-[#8dd3f7]/10 to-[#71c1f2]/10 p-4 transition-all duration-300 hover:shadow-lg sm:p-6 animate-scaleIn" style={{animationDelay: '0.7s'}}>
+              <div className="group rounded-2xl glass-card p-4 transition-all duration-300 hover:shadow-lg sm:p-6 animate-scaleIn" style={{animationDelay: '0.7s'}}>
                 <div className="text-center">
                   <div className="bg-gradient-to-r from-[#4a9fd1] to-[#71c1f2] bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">
                     100+

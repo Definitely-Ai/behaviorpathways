@@ -4,13 +4,14 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/theme-toggle'
 import { siteConfig } from '@/lib/siteConfig'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-blue-200/50 bg-white/95 shadow-lg backdrop-blur-xl supports-[backdrop-filter]:bg-white/80">
+    <header className="sticky top-0 z-50 w-full border-b border-[#71c1f2]/20 glass-card shadow-lg backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="group flex items-center space-x-4">
           <div className="relative">
@@ -55,13 +56,11 @@ export function Header() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center lg:flex">
+        <div className="hidden items-center space-x-4 lg:flex">
+          <ThemeToggle />
           <Button
             size="sm"
             className="group relative overflow-hidden bg-gradient-to-r from-[#71c1f2] to-[#4a9fd1] px-8 py-2.5 text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:from-[#4a9fd1] hover:to-[#71c1f2] hover:shadow-xl hover:shadow-[#71c1f2]/30"
-            style={{
-              animation: 'pulse 2s infinite',
-            }}
             asChild
           >
             <Link href="/contact" className="relative z-10 flex items-center">
@@ -115,7 +114,10 @@ export function Header() {
                 </Link>
               ))}
             </div>
-            <div className="border-t border-gray-200 pt-6">
+            <div className="border-t border-gray-200 pt-6 space-y-4">
+              <div className="flex justify-center">
+                <ThemeToggle />
+              </div>
               <Button
                 className="group relative w-full overflow-hidden bg-gradient-to-r from-[#71c1f2] to-[#4a9fd1] py-3 text-white shadow-lg transition-all duration-300 hover:from-[#4a9fd1] hover:to-[#71c1f2] hover:shadow-xl hover:shadow-[#71c1f2]/30"
                 asChild

@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { AnnouncementBar } from '@/components/announcement-bar'
+import { ThemeProvider } from '@/components/theme-provider'
 import { generateOrganizationSchema } from '@/lib/schema'
 import { siteConfig } from '@/lib/siteConfig'
 
@@ -70,7 +71,7 @@ export default function RootLayout({
   const organizationSchema = generateOrganizationSchema()
 
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
         <meta name="apple-mobile-web-app-title" content="Behavior Pathways" />
         <script
@@ -81,15 +82,22 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased`}>
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        <AnnouncementBar />
-        <Header />
-        <main id="main-content" className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          <AnnouncementBar />
+          <Header />
+          <main id="main-content" className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

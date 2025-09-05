@@ -7,7 +7,7 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ quote, author }: TestimonialCardProps) {
   return (
-    <Card className="group h-full bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scaleIn">
+    <Card className="group h-full glass-card border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scaleIn">
       <CardContent className="p-8">
         <div className="flex items-start space-x-4">
           <div className="w-12 h-12 bg-gradient-to-r from-[#71c1f2] to-[#8dd3f7] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
