@@ -203,37 +203,6 @@ export function Hero() {
               </div>
             </div>
           </div>
-
-          <div className="space-y-6 lg:space-y-8">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              <div
-                className="glass-card group animate-scaleIn rounded-2xl p-4 transition-all duration-300 hover:shadow-lg sm:p-6"
-                style={{ animationDelay: '0.5s' }}
-              >
-                <div className="text-center">
-                  <div className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">
-                    10+
-                  </div>
-                  <div className="mt-1 text-xs font-medium text-muted-foreground sm:text-sm">
-                    Years Experience
-                  </div>
-                </div>
-              </div>
-              <div
-                className="glass-card group animate-scaleIn rounded-2xl p-4 transition-all duration-300 hover:shadow-lg sm:p-6"
-                style={{ animationDelay: '0.7s' }}
-              >
-                <div className="text-center">
-                  <div className="bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">
-                    100+
-                  </div>
-                  <div className="mt-1 text-xs font-medium text-muted-foreground sm:text-sm">
-                    Families Helped
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
