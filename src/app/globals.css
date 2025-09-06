@@ -403,7 +403,7 @@ video {
 /* Mobile-specific text enhancements */
 @media (max-width: 767px) {
   .hero-text-overlay {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 
   /* Mobile hero section improvements */
@@ -426,5 +426,17 @@ video {
   .hero-mobile p {
     font-size: 0.875rem;
     line-height: 1.5rem;
+  }
+
+  /* Enhanced mobile text containers */
+  .hero-text-overlay.bg-background\/80 {
+    backdrop-filter: blur(8px);
+    background: rgba(var(--background), 0.85);
+    border: 1px solid rgba(var(--border), 0.3);
+  }
+
+  /* Mobile trust badges enhancement */
+  .hero-text-overlay.bg-background\/80 .text-primary {
+    color: hsl(var(--primary));
   }
 }

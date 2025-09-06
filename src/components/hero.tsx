@@ -66,14 +66,14 @@ export function Hero() {
       </div>
 
       {/* Mobile Static Background with Enhanced Visual Elements */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/20 via-background to-primary/25 md:hidden">
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/15 via-background to-primary/20 md:hidden">
         {/* Mobile-specific floating elements */}
-        <div className="absolute left-8 top-20 h-32 w-32 animate-float rounded-full bg-gradient-to-br from-primary/30 to-primary/20 blur-2xl"></div>
+        <div className="absolute left-8 top-20 h-32 w-32 animate-float rounded-full bg-gradient-to-br from-primary/25 to-primary/15 blur-2xl"></div>
         <div
-          className="absolute bottom-20 right-8 h-40 w-40 animate-float rounded-full bg-gradient-to-tr from-primary/25 to-primary/15 blur-2xl"
+          className="absolute bottom-20 right-8 h-40 w-40 animate-float rounded-full bg-gradient-to-tr from-primary/20 to-primary/10 blur-2xl"
           style={{ animationDelay: '1s' }}
         ></div>
-        <div className="absolute left-1/2 top-1/2 h-24 w-24 animate-pulse rounded-full bg-gradient-to-br from-primary/20 to-primary/10 blur-xl"></div>
+        <div className="to-primary/8 absolute left-1/2 top-1/2 h-24 w-24 animate-pulse rounded-full bg-gradient-to-br from-primary/15 blur-xl"></div>
       </div>
 
       {/* Enhanced Background decoration */}
@@ -115,13 +115,13 @@ export function Hero() {
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-6 md:space-y-10">
             <div className="space-y-6">
-              <h1 className="hero-text-overlay animate-fadeInDown text-3xl font-bold leading-tight tracking-tight text-white drop-shadow-2xl sm:text-4xl md:hidden md:text-white lg:text-7xl">
+              <h1 className="hero-text-overlay animate-fadeInDown text-3xl font-bold leading-tight tracking-tight text-foreground drop-shadow-lg sm:text-4xl md:hidden">
                 Empowering Communication, Building Independence
               </h1>
               <h1 className="hero-text-overlay hidden animate-fadeInDown text-3xl font-bold leading-tight tracking-tight text-white drop-shadow-2xl sm:text-4xl md:block lg:text-7xl">
                 Empowering Communication, Building Independence
               </h1>
-              <p className="hero-text-overlay max-w-2xl rounded-lg border border-white/30 bg-white/20 p-4 text-base leading-relaxed text-white drop-shadow-lg backdrop-blur-sm sm:text-lg md:hidden">
+              <p className="hero-text-overlay max-w-2xl rounded-lg border border-border/30 bg-background/80 p-4 text-base leading-relaxed text-foreground drop-shadow-sm backdrop-blur-md sm:text-lg md:hidden">
                 Personalized ABA therapy across Naples, Fort Myers, Bonita
                 Springs, Estero, Marco Island & Southwest Florida—helping your
                 child thrive at home, school, and in the community.
@@ -149,11 +149,11 @@ export function Hero() {
               </Button>
 
               <div className="space-y-2">
-                <p className="text-xs text-white/90 drop-shadow-md sm:text-sm md:hidden">
+                <p className="text-xs text-muted-foreground drop-shadow-md sm:text-sm md:hidden">
                   &ldquo;A better conversation starts here. No pressure—just
                   support.&rdquo;
                 </p>
-                <p className="text-xs italic text-white/80 drop-shadow-md sm:text-sm md:hidden">
+                <p className="text-xs italic text-muted-foreground drop-shadow-md sm:text-sm md:hidden">
                   &ldquo;Valentina helped my daughter find her voice and we
                   learned how to support her at home.&rdquo; – M.L.
                 </p>
@@ -169,7 +169,29 @@ export function Hero() {
             </div>
 
             <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8">
-              <div className="flex items-center space-x-2 rounded-full border border-white/40 bg-white/30 px-3 py-2 shadow-xl backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3">
+              <div className="flex items-center space-x-2 rounded-full border border-border/30 bg-background/80 px-3 py-2 shadow-lg backdrop-blur-md sm:space-x-3 sm:px-4 sm:py-3 md:hidden">
+                <Award className="h-5 w-5 text-primary sm:h-6 sm:w-6" />
+                <div>
+                  <div className="text-lg font-bold text-foreground sm:text-xl">
+                    10+
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    Years Experience
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2 rounded-full border border-border/30 bg-background/80 px-3 py-2 shadow-lg backdrop-blur-md sm:space-x-3 sm:px-4 sm:py-3 md:hidden">
+                <Heart className="h-5 w-5 text-primary sm:h-6 sm:w-6" />
+                <div>
+                  <div className="text-lg font-bold text-foreground sm:text-xl">
+                    100+
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    Families Helped
+                  </div>
+                </div>
+              </div>
+              <div className="flex hidden items-center space-x-2 rounded-full border border-white/40 bg-white/30 px-3 py-2 shadow-xl backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3 md:flex">
                 <Award className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 <div>
                   <div className="text-lg font-bold text-white sm:text-xl">
@@ -178,7 +200,7 @@ export function Hero() {
                   <div className="text-xs text-white/95">Years Experience</div>
                 </div>
               </div>
-              <div className="flex items-center space-x-2 rounded-full border border-white/40 bg-white/30 px-3 py-2 shadow-xl backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3">
+              <div className="flex hidden items-center space-x-2 rounded-full border border-white/40 bg-white/30 px-3 py-2 shadow-xl backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3 md:flex">
                 <Heart className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 <div>
                   <div className="text-lg font-bold text-white sm:text-xl">
