@@ -352,7 +352,7 @@ video {
   video {
     object-position: center center;
     /* Ensure video doesn't interfere with text */
-    filter: brightness(0.7) contrast(1.2);
+    filter: brightness(0.6) contrast(1.3);
   }
 }
 
@@ -377,7 +377,27 @@ video {
 
 /* Enhanced text readability over video */
 .hero-text-overlay {
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  text-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.7),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Desktop-specific text enhancements for video background */
+@media (min-width: 768px) {
+  .hero-text-overlay {
+    text-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.8),
+      0 2px 6px rgba(0, 0, 0, 0.6);
+    /* Add subtle outline for better readability */
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Enhanced backdrop blur for text containers */
+  .hero-text-overlay.bg-white\/20 {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
 }
 
 /* Mobile-specific text enhancements */

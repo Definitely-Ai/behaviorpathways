@@ -59,8 +59,10 @@ export function Hero() {
             type="video/mp4"
           />
         </video>
-        {/* Stronger Video Overlay for Desktop */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/50 to-black/40"></div>
+        {/* Dynamic Video Overlay for Desktop - Enhanced contrast */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/70 to-black/60"></div>
+        {/* Additional overlay for text areas */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-transparent"></div>
       </div>
 
       {/* Mobile Static Background with Enhanced Visual Elements */}
@@ -116,7 +118,7 @@ export function Hero() {
               <h1 className="hero-text-overlay animate-fadeInDown text-3xl font-bold leading-tight tracking-tight text-white drop-shadow-2xl sm:text-4xl md:hidden md:text-white lg:text-7xl">
                 Empowering Communication, Building Independence
               </h1>
-              <h1 className="hero-text-overlay hidden animate-fadeInDown text-3xl font-bold leading-tight tracking-tight text-foreground drop-shadow-2xl sm:text-4xl md:block lg:text-7xl">
+              <h1 className="hero-text-overlay hidden animate-fadeInDown text-3xl font-bold leading-tight tracking-tight text-white drop-shadow-2xl sm:text-4xl md:block lg:text-7xl">
                 Empowering Communication, Building Independence
               </h1>
               <p className="hero-text-overlay max-w-2xl rounded-lg border border-white/30 bg-white/20 p-4 text-base leading-relaxed text-white drop-shadow-lg backdrop-blur-sm sm:text-lg md:hidden">
@@ -124,7 +126,7 @@ export function Hero() {
                 Springs, Estero, Marco Island & Southwest Florida—helping your
                 child thrive at home, school, and in the community.
               </p>
-              <p className="hero-text-overlay hidden max-w-2xl rounded-lg border border-background/30 bg-background/20 p-6 text-lg leading-relaxed text-foreground drop-shadow-lg backdrop-blur-sm sm:text-xl md:block">
+              <p className="hero-text-overlay hidden max-w-2xl rounded-lg border border-white/40 bg-white/30 p-6 text-lg leading-relaxed text-white drop-shadow-lg backdrop-blur-md sm:text-xl md:block">
                 Personalized ABA therapy across Naples, Fort Myers, Bonita
                 Springs, Estero, Marco Island & Southwest Florida—helping your
                 child thrive at home, school, and in the community.
@@ -167,22 +169,22 @@ export function Hero() {
             </div>
 
             <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8">
-              <div className="flex items-center space-x-2 rounded-full border border-white/30 bg-white/20 px-3 py-2 shadow-lg backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3">
+              <div className="flex items-center space-x-2 rounded-full border border-white/40 bg-white/30 px-3 py-2 shadow-xl backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3">
                 <Award className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 <div>
                   <div className="text-lg font-bold text-white sm:text-xl">
                     10+
                   </div>
-                  <div className="text-xs text-white/90">Years Experience</div>
+                  <div className="text-xs text-white/95">Years Experience</div>
                 </div>
               </div>
-              <div className="flex items-center space-x-2 rounded-full border border-white/30 bg-white/20 px-3 py-2 shadow-lg backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3">
+              <div className="flex items-center space-x-2 rounded-full border border-white/40 bg-white/30 px-3 py-2 shadow-xl backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3">
                 <Heart className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 <div>
                   <div className="text-lg font-bold text-white sm:text-xl">
                     100+
                   </div>
-                  <div className="text-xs text-white/90">Families Helped</div>
+                  <div className="text-xs text-white/95">Families Helped</div>
                 </div>
               </div>
             </div>
