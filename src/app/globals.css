@@ -342,12 +342,24 @@
 video {
   object-fit: cover;
   will-change: transform;
+  /* Optimize for performance */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
-/* Mobile video optimizations */
-@media (max-width: 768px) {
+/* Desktop video optimizations */
+@media (min-width: 768px) {
   video {
     object-position: center center;
+    /* Ensure video doesn't interfere with text */
+    filter: brightness(0.8) contrast(1.1);
+  }
+}
+
+/* Mobile optimizations - no video */
+@media (max-width: 767px) {
+  video {
+    display: none !important;
   }
 }
 
@@ -355,5 +367,22 @@ video {
 @media (prefers-reduced-motion: reduce) {
   video {
     animation: none;
+  }
+
+  /* Hide floating animations on mobile when motion is reduced */
+  .animate-float {
+    animation: none;
+  }
+}
+
+/* Enhanced text readability over video */
+.hero-text-overlay {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile-specific text enhancements */
+@media (max-width: 767px) {
+  .hero-text-overlay {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 }

@@ -44,8 +44,8 @@ const miniSections = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden py-16 md:py-24">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+      {/* Desktop Video Background */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <video
           autoPlay
           muted
@@ -53,42 +53,56 @@ export function Hero() {
           playsInline
           className="h-full w-full object-cover"
         >
-          <source src="/Website_Content_to_Video_Generation.mp4" type="video/mp4" />
+          <source
+            src="/Website_Content_to_Video_Generation.mp4"
+            type="video/mp4"
+          />
         </video>
-        {/* Video Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background/40 to-primary/30"></div>
+        {/* Stronger Video Overlay for Desktop */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-background/60 to-primary/40"></div>
       </div>
-      
+
+      {/* Mobile Static Background with Enhanced Visual Elements */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/10 via-background to-primary/15 md:hidden">
+        {/* Mobile-specific floating elements */}
+        <div className="absolute left-8 top-20 h-32 w-32 animate-float rounded-full bg-gradient-to-br from-primary/20 to-primary/10 blur-2xl"></div>
+        <div
+          className="absolute bottom-20 right-8 h-40 w-40 animate-float rounded-full bg-gradient-to-tr from-primary/15 to-primary/5 blur-2xl"
+          style={{ animationDelay: '1s' }}
+        ></div>
+        <div className="absolute left-1/2 top-1/2 h-24 w-24 animate-pulse rounded-full bg-gradient-to-br from-primary/10 to-primary/5 blur-xl"></div>
+      </div>
+
       {/* Enhanced Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/10"></div>
-      <div className="animate-float absolute right-0 top-0 h-64 w-64 rounded-full bg-gradient-to-br from-primary/10 to-primary/20 blur-3xl md:h-96 md:w-96"></div>
+      <div className="absolute right-0 top-0 h-64 w-64 animate-float rounded-full bg-gradient-to-br from-primary/10 to-primary/20 blur-3xl md:h-96 md:w-96"></div>
       <div
-        className="animate-float absolute bottom-0 left-0 h-64 w-64 rounded-full bg-gradient-to-tr from-primary/15 to-primary/10 blur-3xl md:h-96 md:w-96"
+        className="absolute bottom-0 left-0 h-64 w-64 animate-float rounded-full bg-gradient-to-tr from-primary/15 to-primary/10 blur-3xl md:h-96 md:w-96"
         style={{ animationDelay: '1s' }}
       ></div>
       <div className="absolute left-1/2 top-1/2 h-32 w-32 animate-pulse rounded-full bg-gradient-to-br from-primary/5 to-primary/10 blur-2xl"></div>
 
       {/* Floating Icons */}
       <div
-        className="animate-float absolute left-10 top-20 opacity-20"
+        className="absolute left-10 top-20 animate-float opacity-20"
         style={{ animationDelay: '0.5s' }}
       >
         <MessageCircle className="h-8 w-8 text-primary" />
       </div>
       <div
-        className="animate-float absolute right-20 top-40 opacity-20"
+        className="absolute right-20 top-40 animate-float opacity-20"
         style={{ animationDelay: '1.5s' }}
       >
         <Heart className="h-6 w-6 text-primary" />
       </div>
       <div
-        className="animate-float absolute bottom-32 left-20 opacity-20"
+        className="absolute bottom-32 left-20 animate-float opacity-20"
         style={{ animationDelay: '2s' }}
       >
         <Star className="h-7 w-7 text-primary" />
       </div>
       <div
-        className="animate-float absolute bottom-20 right-10 opacity-20"
+        className="absolute bottom-20 right-10 animate-float opacity-20"
         style={{ animationDelay: '0.8s' }}
       >
         <Sparkles className="h-5 w-5 text-primary" />
@@ -98,14 +112,14 @@ export function Hero() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-10">
             <div className="space-y-6">
-              <div className="animate-scaleIn mb-4 inline-flex items-center rounded-full bg-primary/20 backdrop-blur-sm px-4 py-2 text-sm font-medium text-primary shadow-lg">
+              <div className="mb-4 inline-flex animate-scaleIn items-center rounded-full border border-primary/20 bg-primary/30 px-4 py-2 text-sm font-medium text-primary shadow-xl backdrop-blur-md">
                 ✨ Trusted by families across Naples, Fort Myers & Southwest
                 Florida
               </div>
-              <h1 className="animate-fadeInDown bg-gradient-to-r from-foreground via-primary to-primary/80 bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent sm:text-5xl lg:text-7xl drop-shadow-lg">
+              <h1 className="hero-text-overlay animate-fadeInDown bg-gradient-to-r from-foreground via-primary to-primary/80 bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent drop-shadow-2xl sm:text-5xl lg:text-7xl">
                 Independent communication starts here
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-foreground/90 sm:text-xl drop-shadow-md">
+              <p className="hero-text-overlay max-w-2xl rounded-lg border border-background/30 bg-background/20 p-4 text-lg leading-relaxed text-foreground drop-shadow-lg backdrop-blur-sm sm:text-xl">
                 Personalized ABA therapy services in Naples, Fort Myers, Bonita
                 Springs, Estero, Marco Island, and throughout Collier & Lee
                 Counties, Florida. We meet you at home, at school, and in the
@@ -114,8 +128,8 @@ export function Hero() {
             </div>
 
             <div className="space-y-8">
-              <div className="glass-card animate-slideInLeft rounded-2xl p-6 shadow-lg backdrop-blur-md bg-background/80">
-                <p className="text-lg leading-relaxed text-foreground drop-shadow-sm">
+              <div className="glass-card animate-slideInLeft rounded-2xl border border-background/40 bg-background/90 p-6 shadow-xl backdrop-blur-lg">
+                <p className="text-lg leading-relaxed text-foreground drop-shadow-md">
                   We focus on communication first. When children can ask, share,
                   and participate, life opens up for everyone around them.
                 </p>
@@ -125,7 +139,7 @@ export function Hero() {
                 {miniSections.map((section, index) => (
                   <div
                     key={index}
-                    className="glass-card animate-scaleIn group rounded-xl p-4 transition-all duration-300 hover:shadow-lg sm:p-6 backdrop-blur-md bg-background/70"
+                    className="glass-card group animate-scaleIn rounded-xl border border-background/30 bg-background/85 p-4 backdrop-blur-lg transition-all duration-300 hover:shadow-xl sm:p-6"
                     style={{ animationDelay: `${index * 200}ms` }}
                   >
                     <div className="flex items-start space-x-3 sm:space-x-4">
@@ -178,7 +192,7 @@ export function Hero() {
               {trustBadges.map((badge, index) => (
                 <div
                   key={index}
-                  className="glass animate-scaleIn flex items-center space-x-2 rounded-full px-3 py-2 text-xs text-muted-foreground sm:text-sm backdrop-blur-md bg-background/70"
+                  className="glass flex animate-scaleIn items-center space-x-2 rounded-full border border-background/30 bg-background/85 px-3 py-2 text-xs text-muted-foreground shadow-lg backdrop-blur-lg sm:text-sm"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <badge.icon className="h-3 w-3 text-primary sm:h-4 sm:w-4" />
@@ -189,7 +203,7 @@ export function Hero() {
           </div>
 
           <div className="space-y-6 lg:space-y-8">
-            <div className="animate-slideInRight relative">
+            <div className="relative animate-slideInRight">
               <Card className="glass-card border-0 p-6 shadow-xl sm:p-8">
                 <CardContent className="p-0">
                   <div className="flex items-start space-x-3 sm:space-x-4">
@@ -215,7 +229,7 @@ export function Hero() {
 
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               <div
-                className="glass-card animate-scaleIn group rounded-2xl p-4 transition-all duration-300 hover:shadow-lg sm:p-6"
+                className="glass-card group animate-scaleIn rounded-2xl p-4 transition-all duration-300 hover:shadow-lg sm:p-6"
                 style={{ animationDelay: '0.5s' }}
               >
                 <div className="text-center">
@@ -228,7 +242,7 @@ export function Hero() {
                 </div>
               </div>
               <div
-                className="glass-card animate-scaleIn group rounded-2xl p-4 transition-all duration-300 hover:shadow-lg sm:p-6"
+                className="glass-card group animate-scaleIn rounded-2xl p-4 transition-all duration-300 hover:shadow-lg sm:p-6"
                 style={{ animationDelay: '0.7s' }}
               >
                 <div className="text-center">
