@@ -153,17 +153,9 @@ export function Hero() {
                   &ldquo;A better conversation starts here. No pressure—just
                   support.&rdquo;
                 </p>
-                <p className="text-xs italic text-muted-foreground drop-shadow-md sm:text-sm md:hidden">
-                  &ldquo;Valentina helped my daughter find her voice and we
-                  learned how to support her at home.&rdquo; – M.L.
-                </p>
                 <p className="hidden text-sm text-white/90 drop-shadow-md md:block">
                   &ldquo;A better conversation starts here. No pressure—just
                   support.&rdquo;
-                </p>
-                <p className="hidden text-sm italic text-white/80 drop-shadow-md md:block">
-                  &ldquo;Valentina helped my daughter find her voice and we
-                  learned how to support her at home.&rdquo; – M.L.
                 </p>
               </div>
             </div>
@@ -213,30 +205,6 @@ export function Hero() {
           </div>
 
           <div className="space-y-6 lg:space-y-8">
-            <div className="relative animate-slideInRight">
-              <Card className="glass-card border-0 p-6 shadow-xl sm:p-8">
-                <CardContent className="p-0">
-                  <div className="flex items-start space-x-3 sm:space-x-4">
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-primary to-primary/80 text-sm font-bold text-primary-foreground sm:h-12 sm:w-12 sm:text-lg">
-                      M
-                    </div>
-                    <div className="flex-1">
-                      <blockquote className="text-base leading-relaxed text-foreground sm:text-lg">
-                        &ldquo;Valentina helped my daughter find her voice and
-                        we learned how to support her at home.&rdquo;
-                      </blockquote>
-                      <footer className="mt-3 text-sm font-semibold text-muted-foreground sm:mt-4">
-                        - M.L.
-                      </footer>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <div className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-yellow-400 sm:-right-2 sm:-top-2 sm:h-6 sm:w-6">
-                <span className="text-xs text-yellow-800">⭐</span>
-              </div>
-            </div>
-
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               <div
                 className="glass-card group animate-scaleIn rounded-2xl p-4 transition-all duration-300 hover:shadow-lg sm:p-6"
