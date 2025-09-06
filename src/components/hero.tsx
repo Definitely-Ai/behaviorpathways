@@ -44,7 +44,7 @@ const miniSections = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24">
+    <section className="relative overflow-hidden py-12 md:py-24">
       {/* Desktop Video Background */}
       <div className="absolute inset-0 z-0 hidden md:block">
         <video
@@ -64,14 +64,14 @@ export function Hero() {
       </div>
 
       {/* Mobile Static Background with Enhanced Visual Elements */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/10 via-background to-primary/15 md:hidden">
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/20 via-background to-primary/25 md:hidden">
         {/* Mobile-specific floating elements */}
-        <div className="absolute left-8 top-20 h-32 w-32 animate-float rounded-full bg-gradient-to-br from-primary/20 to-primary/10 blur-2xl"></div>
+        <div className="absolute left-8 top-20 h-32 w-32 animate-float rounded-full bg-gradient-to-br from-primary/30 to-primary/20 blur-2xl"></div>
         <div
-          className="absolute bottom-20 right-8 h-40 w-40 animate-float rounded-full bg-gradient-to-tr from-primary/15 to-primary/5 blur-2xl"
+          className="absolute bottom-20 right-8 h-40 w-40 animate-float rounded-full bg-gradient-to-tr from-primary/25 to-primary/15 blur-2xl"
           style={{ animationDelay: '1s' }}
         ></div>
-        <div className="absolute left-1/2 top-1/2 h-24 w-24 animate-pulse rounded-full bg-gradient-to-br from-primary/10 to-primary/5 blur-xl"></div>
+        <div className="absolute left-1/2 top-1/2 h-24 w-24 animate-pulse rounded-full bg-gradient-to-br from-primary/20 to-primary/10 blur-xl"></div>
       </div>
 
       {/* Enhanced Background decoration */}
@@ -110,13 +110,21 @@ export function Hero() {
       </div>
 
       <div className="container relative z-20">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-10">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16">
+          <div className="space-y-6 md:space-y-10">
             <div className="space-y-6">
-              <h1 className="hero-text-overlay animate-fadeInDown text-4xl font-bold leading-tight tracking-tight text-white drop-shadow-2xl sm:text-5xl lg:text-7xl">
+              <h1 className="hero-text-overlay animate-fadeInDown text-3xl font-bold leading-tight tracking-tight text-white drop-shadow-2xl sm:text-4xl md:hidden md:text-white lg:text-7xl">
                 Empowering Communication, Building Independence
               </h1>
-              <p className="hero-text-overlay max-w-2xl rounded-lg border border-white/30 bg-white/20 p-6 text-lg leading-relaxed text-white drop-shadow-lg backdrop-blur-sm sm:text-xl">
+              <h1 className="hero-text-overlay hidden animate-fadeInDown text-3xl font-bold leading-tight tracking-tight text-foreground drop-shadow-2xl sm:text-4xl md:block lg:text-7xl">
+                Empowering Communication, Building Independence
+              </h1>
+              <p className="hero-text-overlay max-w-2xl rounded-lg border border-white/30 bg-white/20 p-4 text-base leading-relaxed text-white drop-shadow-lg backdrop-blur-sm sm:text-lg md:hidden">
+                Personalized ABA therapy across Naples, Fort Myers, Bonita
+                Springs, Estero, Marco Island & Southwest Florida—helping your
+                child thrive at home, school, and in the community.
+              </p>
+              <p className="hero-text-overlay hidden max-w-2xl rounded-lg border border-background/30 bg-background/20 p-6 text-lg leading-relaxed text-foreground drop-shadow-lg backdrop-blur-sm sm:text-xl md:block">
                 Personalized ABA therapy across Naples, Fort Myers, Bonita
                 Springs, Estero, Marco Island & Southwest Florida—helping your
                 child thrive at home, school, and in the community.
@@ -126,42 +134,54 @@ export function Hero() {
             <div className="space-y-4">
               <Button
                 size="lg"
-                className="hover:shadow-3xl group relative overflow-hidden bg-white px-8 py-4 text-lg font-bold text-primary shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100"
+                className="hover:shadow-3xl group relative overflow-hidden bg-white px-6 py-3 text-base font-bold text-primary shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 sm:px-8 sm:py-4 sm:text-lg"
                 asChild
               >
                 <Link
                   href="/contact"
                   className="relative z-10 flex items-center"
                 >
-                  <Phone className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+                  <Phone className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 sm:h-5 sm:w-5" />
                   <span className="font-bold">Book Your Free Consultation</span>
                 </Link>
               </Button>
 
               <div className="space-y-2">
-                <p className="text-sm text-white/90 drop-shadow-md">
+                <p className="text-xs text-white/90 drop-shadow-md sm:text-sm md:hidden">
                   &ldquo;A better conversation starts here. No pressure—just
                   support.&rdquo;
                 </p>
-                <p className="text-sm italic text-white/80 drop-shadow-md">
+                <p className="text-xs italic text-white/80 drop-shadow-md sm:text-sm md:hidden">
+                  &ldquo;Valentina helped my daughter find her voice and we
+                  learned how to support her at home.&rdquo; – M.L.
+                </p>
+                <p className="hidden text-sm text-white/90 drop-shadow-md md:block">
+                  &ldquo;A better conversation starts here. No pressure—just
+                  support.&rdquo;
+                </p>
+                <p className="hidden text-sm italic text-white/80 drop-shadow-md md:block">
                   &ldquo;Valentina helped my daughter find her voice and we
                   learned how to support her at home.&rdquo; – M.L.
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-6 sm:gap-8">
-              <div className="flex items-center space-x-3 rounded-full border border-white/30 bg-white/20 px-4 py-3 shadow-lg backdrop-blur-lg">
-                <Award className="h-6 w-6 text-white" />
+            <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8">
+              <div className="flex items-center space-x-2 rounded-full border border-white/30 bg-white/20 px-3 py-2 shadow-lg backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3">
+                <Award className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 <div>
-                  <div className="text-xl font-bold text-white">10+</div>
+                  <div className="text-lg font-bold text-white sm:text-xl">
+                    10+
+                  </div>
                   <div className="text-xs text-white/90">Years Experience</div>
                 </div>
               </div>
-              <div className="flex items-center space-x-3 rounded-full border border-white/30 bg-white/20 px-4 py-3 shadow-lg backdrop-blur-lg">
-                <Heart className="h-6 w-6 text-white" />
+              <div className="flex items-center space-x-2 rounded-full border border-white/30 bg-white/20 px-3 py-2 shadow-lg backdrop-blur-lg sm:space-x-3 sm:px-4 sm:py-3">
+                <Heart className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 <div>
-                  <div className="text-xl font-bold text-white">100+</div>
+                  <div className="text-lg font-bold text-white sm:text-xl">
+                    100+
+                  </div>
                   <div className="text-xs text-white/90">Families Helped</div>
                 </div>
               </div>
