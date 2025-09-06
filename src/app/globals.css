@@ -352,7 +352,7 @@ video {
   video {
     object-position: center center;
     /* Ensure video doesn't interfere with text */
-    filter: brightness(0.8) contrast(1.1);
+    filter: brightness(0.7) contrast(1.2);
   }
 }
 
@@ -377,12 +377,12 @@ video {
 
 /* Enhanced text readability over video */
 .hero-text-overlay {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Mobile-specific text enhancements */
 @media (max-width: 767px) {
   .hero-text-overlay {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 }

@@ -14,6 +14,7 @@ import {
   Shield,
   Award,
   Sparkles,
+  Phone,
 } from 'lucide-react'
 
 const trustBadges = [
@@ -59,7 +60,7 @@ export function Hero() {
           />
         </video>
         {/* Stronger Video Overlay for Desktop */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-background/60 to-primary/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/50 to-black/40"></div>
       </div>
 
       {/* Mobile Static Background with Enhanced Visual Elements */}
@@ -112,93 +113,58 @@ export function Hero() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-10">
             <div className="space-y-6">
-              <div className="mb-4 inline-flex animate-scaleIn items-center rounded-full border border-primary/20 bg-primary/30 px-4 py-2 text-sm font-medium text-primary shadow-xl backdrop-blur-md">
-                ✨ Trusted by families across Naples, Fort Myers & Southwest
-                Florida
-              </div>
-              <h1 className="hero-text-overlay animate-fadeInDown bg-gradient-to-r from-foreground via-primary to-primary/80 bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent drop-shadow-2xl sm:text-5xl lg:text-7xl">
-                Independent communication starts here
+              <h1 className="hero-text-overlay animate-fadeInDown text-4xl font-bold leading-tight tracking-tight text-white drop-shadow-2xl sm:text-5xl lg:text-7xl">
+                Empowering Communication, Building Independence
               </h1>
-              <p className="hero-text-overlay max-w-2xl rounded-lg border border-background/30 bg-background/20 p-4 text-lg leading-relaxed text-foreground drop-shadow-lg backdrop-blur-sm sm:text-xl">
-                Personalized ABA therapy services in Naples, Fort Myers, Bonita
-                Springs, Estero, Marco Island, and throughout Collier & Lee
-                Counties, Florida. We meet you at home, at school, and in the
-                community so real life progress can happen every day.
+              <p className="hero-text-overlay max-w-2xl rounded-lg border border-white/30 bg-white/20 p-6 text-lg leading-relaxed text-white drop-shadow-lg backdrop-blur-sm sm:text-xl">
+                Personalized ABA therapy across Naples, Fort Myers, Bonita
+                Springs, Estero, Marco Island & Southwest Florida—helping your
+                child thrive at home, school, and in the community.
               </p>
             </div>
 
-            <div className="space-y-8">
-              <div className="glass-card animate-slideInLeft rounded-2xl border border-background/40 bg-background/90 p-6 shadow-xl backdrop-blur-lg">
-                <p className="text-lg leading-relaxed text-foreground drop-shadow-md">
-                  We focus on communication first. When children can ask, share,
-                  and participate, life opens up for everyone around them.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-                {miniSections.map((section, index) => (
-                  <div
-                    key={index}
-                    className="glass-card group animate-scaleIn rounded-xl border border-background/30 bg-background/85 p-4 backdrop-blur-lg transition-all duration-300 hover:shadow-xl sm:p-6"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <div className="flex items-start space-x-3 sm:space-x-4">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-primary/10 to-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-primary/30">
-                        <section.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-primary/80" />
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold text-foreground transition-colors duration-300 group-hover:text-primary sm:text-base">
-                          {section.title}
-                        </h3>
-                        <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
-                          {section.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="space-y-4">
               <Button
                 size="lg"
-                className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 px-8 py-3 text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:from-primary/90 hover:to-primary hover:shadow-xl hover:shadow-primary/30"
+                className="hover:shadow-3xl group relative overflow-hidden bg-white px-8 py-4 text-lg font-bold text-primary shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100"
                 asChild
               >
                 <Link
                   href="/contact"
                   className="relative z-10 flex items-center"
                 >
-                  <Sparkles className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
-                  <span className="font-semibold">Book a free intro call</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  <Phone className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+                  <span className="font-bold">Book Your Free Consultation</span>
                 </Link>
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="group border-2 border-primary bg-transparent px-8 py-3 text-foreground transition-all duration-300 hover:border-primary/80 hover:bg-primary/10 hover:text-primary"
-                asChild
-              >
-                <Link href="/approach" className="flex items-center">
-                  <GraduationCap className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
-                  <span className="font-semibold">Learn how we work</span>
-                </Link>
-              </Button>
+
+              <div className="space-y-2">
+                <p className="text-sm text-white/90 drop-shadow-md">
+                  &ldquo;A better conversation starts here. No pressure—just
+                  support.&rdquo;
+                </p>
+                <p className="text-sm italic text-white/80 drop-shadow-md">
+                  &ldquo;Valentina helped my daughter find her voice and we
+                  learned how to support her at home.&rdquo; – M.L.
+                </p>
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 sm:gap-6">
-              {trustBadges.map((badge, index) => (
-                <div
-                  key={index}
-                  className="glass flex animate-scaleIn items-center space-x-2 rounded-full border border-background/30 bg-background/85 px-3 py-2 text-xs text-muted-foreground shadow-lg backdrop-blur-lg sm:text-sm"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <badge.icon className="h-3 w-3 text-primary sm:h-4 sm:w-4" />
-                  <span className="font-medium">{badge.text}</span>
+            <div className="flex flex-wrap gap-6 sm:gap-8">
+              <div className="flex items-center space-x-3 rounded-full border border-white/30 bg-white/20 px-4 py-3 shadow-lg backdrop-blur-lg">
+                <Award className="h-6 w-6 text-white" />
+                <div>
+                  <div className="text-xl font-bold text-white">10+</div>
+                  <div className="text-xs text-white/90">Years Experience</div>
                 </div>
-              ))}
+              </div>
+              <div className="flex items-center space-x-3 rounded-full border border-white/30 bg-white/20 px-4 py-3 shadow-lg backdrop-blur-lg">
+                <Heart className="h-6 w-6 text-white" />
+                <div>
+                  <div className="text-xl font-bold text-white">100+</div>
+                  <div className="text-xs text-white/90">Families Helped</div>
+                </div>
+              </div>
             </div>
           </div>
 
